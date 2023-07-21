@@ -331,7 +331,7 @@ def issueRequest(
 def buildIssueRequestQuery(owner: str, name: str, cursor: str):
     return """{{
         repository(owner: "{0}", name: "{1}") {{
-            issues(first: 100{2}) {{
+            issues(first: 40{2}) {{
                 pageInfo {{
                     hasNextPage
                     endCursor
@@ -340,12 +340,12 @@ def buildIssueRequestQuery(owner: str, name: str, cursor: str):
                     number
                     createdAt    
                     closedAt
-                    participants(first: 100) {{
+                    participants(first: 50) {{
                         nodes {{
                             login
                         }}
                     }}
-                    comments(first: 100) {{
+                    comments(first: 20) {{
                         nodes {{
                             bodyText
                         }}
