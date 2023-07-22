@@ -3,21 +3,17 @@ import os
 import csv
 import math
 import sys
-from random import randint
 from ..statsAnalysis import outputStatistics 
 import sentistrength
 from .graphqlAnalysisHelper import runGraphqlRequest, buildNextPageQuery, addLogin
 from ..centralityAnalysis import buildGraphQlNetwork 
-from functools import reduce
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
 from typing import List
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from csDetector.configuration import Configuration
 import threading
-from collections import Counter
 from ..perspectiveAnalysis import getToxicityPercentage
-
 
 def issueAnalysis(
     config: Configuration,
