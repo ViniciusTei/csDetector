@@ -1,7 +1,7 @@
 import os
 import csv
 
-from configuration import Configuration
+from .configuration import Configuration
 
 
 def devAnalysis(

@@ -9,18 +9,18 @@ import sentistrength
 import csv
 import pandas as pd
 
-from configuration import parseDevNetworkArgs
-from repoLoader import getRepo
-from aliasWorker import replaceAliases
-from commitAnalysis import commitAnalysis
-import centralityAnalysis as centrality
-from tagAnalysis import tagAnalysis
-from devAnalysis import devAnalysis
-from graphqlAnalysis.releaseAnalysis import releaseAnalysis
-from graphqlAnalysis.prAnalysis import prAnalysis
-from graphqlAnalysis.issueAnalysis import issueAnalysis
-from smellDetection import smellDetection
-from politenessAnalysis import politenessAnalysis
+from .configuration import parseDevNetworkArgs
+from .extraction.repoLoader import getRepo
+from .extraction.aliasWorker import replaceAliases
+from .extraction.commitAnalysis import commitAnalysis
+import csDetector.extraction.centralityAnalysis as centrality
+from .extraction.tagAnalysis import tagAnalysis
+from .devAnalysis import devAnalysis
+from .extraction.graphqlAnalysis.releaseAnalysis import releaseAnalysis
+from .extraction.graphqlAnalysis.prAnalysis import prAnalysis
+from .extraction.graphqlAnalysis.issueAnalysis import issueAnalysis
+from .detection.smellDetection import smellDetection
+from .extraction.politenessAnalysis import politenessAnalysis
 from dateutil.relativedelta import relativedelta
 
 FILEBROWSER_PATH = os.path.join(os.getenv("WINDIR"), "explorer.exe")

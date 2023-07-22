@@ -1,33 +1,31 @@
-import io
+import math
 import os
 import csv
-import math
 import sys
-from random import randint
-import statsAnalysis as stats
+from ..perspectiveAnalysis import getToxicityPercentage
+from ..statsAnalysis import outputStatistics 
 import sentistrength
-import graphqlAnalysis.graphqlAnalysisHelper as gql
-import centralityAnalysis as centrality
-from functools import reduce
+from .graphqlAnalysisHelper import buildNextPageQuery, addLogin, runGraphqlRequest
+from ..centralityAnalysis import centralityAnalysis as centrality
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
 from typing import List
 from datetime import date, datetime, timezone
-from configuration import Configuration
+from csDetector.configuration import Configuration
+import itertools
 import threading
 from collections import Counter
-from perspectiveAnalysis import getToxicityPercentage
 
 
-def issueAnalysis(
+def prAnalysis(
     config: Configuration,
     senti: sentistrength.PySentiStr,
     delta: relativedelta,
     batchDates: List[datetime],
 ):
 
-    print("Querying issue comments")
-    batches = issueRequest(
+    print("Querying PRs")
+    batches = prRequest(
         config.pat, config.repositoryOwner, config.repositoryName, delta, batchDates
     )
 
@@ -35,27 +33,28 @@ def issueAnalysis(
     batchComments = list()
 
     for batchIdx, batch in enumerate(batches):
-        print(f"Analyzing issue batch #{batchIdx}")
+        print(f"Analyzing PR batch #{batchIdx}")
 
         # extract data from batch
-        issueCount = len(batch)
+        prCount = len(batch)
         participants = list(
-            issue["participants"] for issue in batch if len(issue["participants"]) > 0
+            pr["participants"] for pr in batch if len(pr["participants"]) > 0
         )
         batchParticipants.append(participants)
 
         allComments = list()
-        issuePositiveComments = list()
-        issueNegativeComments = list()
+        prPositiveComments = list()
+        prNegativeComments = list()
         generallyNegative = list()
 
-        print(f"    Sentiments per issue", end="")
+        print(f"    Sentiments per PR", end="")
 
         semaphore = threading.Semaphore(15)
         threads = []
-        for issue in batch:
+        for pr in batch:
+
             comments = list(
-                comment for comment in issue["comments"] if comment and comment.strip()
+                comment for comment in pr["comments"] if comment and comment.strip()
             )
 
             # split comments that are longer than 20KB
@@ -86,8 +85,8 @@ def issueAnalysis(
             comments = splitComments
 
             if len(comments) == 0:
-                issuePositiveComments.append(0)
-                issueNegativeComments.append(0)
+                prPositiveComments.append(0)
+                prNegativeComments.append(0)
                 continue
 
             allComments.extend(comments)
@@ -97,8 +96,8 @@ def issueAnalysis(
                 args=(
                     senti,
                     comments,
-                    issuePositiveComments,
-                    issueNegativeComments,
+                    prPositiveComments,
+                    prNegativeComments,
                     generallyNegative,
                     semaphore,
                 ),
@@ -119,14 +118,13 @@ def issueAnalysis(
         # get comment length stats
         commentLengths = [len(c) for c in allComments]
 
-        generallyNegativeRatio = len(generallyNegative) / issueCount
+        generallyNegativeRatio = len(generallyNegative) / prCount
 
         # get pr duration stats
         durations = [(pr["closedAt"] - pr["createdAt"]).days for pr in batch]
 
         print("    All sentiments")
 
-        # analyze comment issue sentiment
         commentSentiments = []
         commentSentimentsPositive = 0
         commentSentimentsNegative = 0
@@ -142,89 +140,96 @@ def issueAnalysis(
 
         toxicityPercentage = getToxicityPercentage(config, allComments)
 
-        centrality.buildGraphQlNetwork(batchIdx, participants, "Issues", config)
+        centrality.buildGraphQlNetwork(batchIdx, participants, "PRs", config)
 
-        print("Writing GraphQL analysis results")
+        print("    Writing results")
         with open(
             os.path.join(config.resultsPath, f"results_{batchIdx}.csv"),
             "a",
             newline="",
         ) as f:
             w = csv.writer(f, delimiter=",")
-            w.writerow(["NumberIssues", len(batch)])
-            w.writerow(["NumberIssueComments", len(allComments)])
-            w.writerow(["IssueCommentsPositive", commentSentimentsPositive])
-            w.writerow(["IssueCommentsNegative", commentSentimentsNegative])
-            w.writerow(["IssueCommentsNegativeRatio", generallyNegativeRatio])
-            w.writerow(["IssueCommentsToxicityPercentage", toxicityPercentage])
+            w.writerow(["NumberPRs", prCount])
+            w.writerow(["NumberPRComments", len(allComments)])
+            w.writerow(["PRCommentsPositive", commentSentimentsPositive])
+            w.writerow(["PRCommentsNegative", commentSentimentsNegative])
+            w.writerow(["PRCommentsNegativeRatio", generallyNegativeRatio])
+            w.writerow(["PRCommentsToxicityPercentage", toxicityPercentage])
 
         with open(
-            os.path.join(config.metricsPath, f"issueCommentsCount_{batchIdx}.csv"),
+            os.path.join(config.metricsPath, f"PRCommits_{batchIdx}.csv"),
             "a",
             newline="",
         ) as f:
             w = csv.writer(f, delimiter=",")
-            w.writerow(["Issue Number", "Comment Count"])
-            for issue in batch:
-                w.writerow([issue["number"], len(issue["comments"])])
+            w.writerow(["PR Number", "Commit Count"])
+            for pr in batch:
+                w.writerow([pr["number"], pr["commitCount"]])
 
         with open(
-            os.path.join(config.metricsPath, f"issueParticipantCount_{batchIdx}.csv"),
+            os.path.join(config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
             "a",
             newline="",
         ) as f:
             w = csv.writer(f, delimiter=",")
-            w.writerow(["Issue Number", "Developer Count"])
-            for issue in batch:
-                w.writerow([issue["number"], len(set(issue["participants"]))])
+            w.writerow(["PR Number", "Developer Count"])
+            for pr in batch:
+                w.writerow([pr["number"], len(set(pr["participants"]))])
 
         # output statistics
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
             commentLengths,
-            "IssueCommentsLength",
+            "PRCommentsLength",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
             durations,
-            "IssueDuration",
+            "PRDuration",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
-            [len(issue["comments"]) for issue in batch],
-            "IssueCommentsCount",
+            [len(pr["comments"]) for pr in batch],
+            "PRCommentsCount",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
+            batchIdx,
+            [pr["commitCount"] for pr in batch],
+            "PRCommitsCount",
+            config.resultsPath,
+        )
+
+        outputStatistics(
             batchIdx,
             commentSentiments,
-            "IssueCommentSentiments",
+            "PRCommentSentiments",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
-            [len(set(issue["participants"])) for issue in batch],
-            "IssueParticipantCount",
+            [len(set(pr["participants"])) for pr in batch],
+            "PRParticipantsCount",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
-            issuePositiveComments,
-            "IssueCountPositiveComments",
+            prPositiveComments,
+            "PRCountPositiveComments",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
-            issueNegativeComments,
-            "IssueCountNegativeComments",
+            prNegativeComments,
+            "PRCountNegativeComments",
             config.resultsPath,
         )
 
@@ -259,9 +264,10 @@ def analyzeSentiments(
             print(f".", end="")
 
 
-def issueRequest(
+def prRequest(
     pat: str, owner: str, name: str, delta: relativedelta, batchDates: List[datetime]
 ):
+    query = buildPrRequestQuery(owner, name, None)
 
     # prepare batches
     batches = []
@@ -269,18 +275,16 @@ def issueRequest(
     batchStartDate = None
     batchEndDate = None
 
-    cursor = None
     while True:
 
-        # get page of PRs
-        query = buildIssueRequestQuery(owner, name, cursor)
-        result = gql.runGraphqlRequest(pat, query)
+        # get page
+        result = runGraphqlRequest(pat, query)
         print("...")
 
         # extract nodes
-        nodes = result["repository"]["issues"]["nodes"]
+        nodes = result["repository"]["pullRequests"]["nodes"]
 
-        # analyse
+        # add results
         for node in nodes:
 
             createdAt = isoparse(node["createdAt"])
@@ -293,6 +297,7 @@ def issueRequest(
             if batchEndDate == None or (
                 createdAt > batchEndDate and len(batches) < len(batchDates) - 1
             ):
+
                 if batch != None:
                     batches.append(batch)
 
@@ -301,26 +306,28 @@ def issueRequest(
 
                 batch = []
 
-            issue = {
+            pr = {
                 "number": node["number"],
                 "createdAt": createdAt,
                 "closedAt": closedAt,
                 "comments": list(c["bodyText"] for c in node["comments"]["nodes"]),
+                "commitCount": node["commits"]["totalCount"],
                 "participants": list(),
             }
 
             # participants
             for user in node["participants"]["nodes"]:
-                gql.addLogin(user, issue["participants"])
+                addLogin(user, pr["participants"])
 
-            batch.append(issue)
+            batch.append(pr)
 
         # check for next page
-        pageInfo = result["repository"]["issues"]["pageInfo"]
+        pageInfo = result["repository"]["pullRequests"]["pageInfo"]
         if not pageInfo["hasNextPage"]:
             break
 
         cursor = pageInfo["endCursor"]
+        query = buildPrRequestQuery(owner, name, cursor)
 
     if batch != None:
         batches.append(batch)
@@ -328,22 +335,25 @@ def issueRequest(
     return batches
 
 
-def buildIssueRequestQuery(owner: str, name: str, cursor: str):
+def buildPrRequestQuery(owner: str, name: str, cursor: str):
     return """{{
         repository(owner: "{0}", name: "{1}") {{
-            issues(first: 40{2}) {{
+            pullRequests(first:40{2}) {{
                 pageInfo {{
-                    hasNextPage
                     endCursor
+                    hasNextPage
                 }}
                 nodes {{
                     number
-                    createdAt    
+                    createdAt
                     closedAt
                     participants(first: 50) {{
                         nodes {{
                             login
                         }}
+                    }}
+                    commits {{
+                        totalCount
                     }}
                     comments(first: 20) {{
                         nodes {{
@@ -353,6 +363,7 @@ def buildIssueRequestQuery(owner: str, name: str, cursor: str):
                 }}
             }}
         }}
-    }}""".format(
-        owner, name, gql.buildNextPageQuery(cursor)
+    }}
+    """.format(
+        owner, name,buildNextPageQuery(cursor)
     )

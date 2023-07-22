@@ -5,7 +5,7 @@ import requests
 import math
 
 from typing import List
-from configuration import Configuration
+from ..configuration import Configuration
 
 
 def getToxicityPercentage(config: Configuration, comments: List):

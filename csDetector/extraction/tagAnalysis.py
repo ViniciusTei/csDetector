@@ -4,10 +4,10 @@ import csv
 import datetime
 
 from progress.bar import Bar
-from statsAnalysis import outputStatistics
+from .statsAnalysis import outputStatistics
 from typing import List
 from dateutil.relativedelta import relativedelta
-from configuration import Configuration
+from ..configuration import Configuration
 
 
 def tagAnalysis(

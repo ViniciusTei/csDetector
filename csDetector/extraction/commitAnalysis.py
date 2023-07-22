@@ -6,11 +6,11 @@ from dateutil.relativedelta import relativedelta
 from typing import List
 from progress.bar import Bar
 from datetime import datetime
-from utils import authorIdExtractor
-from statsAnalysis import outputStatistics
+from ..utils import authorIdExtractor
+from .statsAnalysis import outputStatistics
 from sentistrength import PySentiStr
 from git.objects.commit import Commit
-from configuration import Configuration
+from ..configuration import Configuration
 import pytz
 
 

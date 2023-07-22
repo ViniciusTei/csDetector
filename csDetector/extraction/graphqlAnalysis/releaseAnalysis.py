@@ -1,14 +1,13 @@
 import os
 import csv
-import graphqlAnalysis.graphqlAnalysisHelper as gql
-import dateutil
+from .graphqlAnalysisHelper import runGraphqlRequest, buildNextPageQuery
 import git
-import statsAnalysis as stats
+from ..statsAnalysis import outputStatistics  
 from typing import List
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
 from datetime import datetime
-from configuration import Configuration
+from csDetector.configuration import Configuration
 
 
 def releaseAnalysis(
@@ -105,14 +104,14 @@ def releaseAnalysis(
                     ]
                 )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
             [value["authorsCount"] for key, value in releaseCommitsCount.items()],
             "ReleaseAuthorCount",
             config.resultsPath,
         )
 
-        stats.outputStatistics(
+        outputStatistics(
             batchIdx,
             [value["commitsCount"] for key, value in releaseCommitsCount.items()],
             "ReleaseCommitCount",
@@ -136,7 +135,7 @@ def releaseRequest(
     while True:
 
         # get page of releases
-        result = gql.runGraphqlRequest(config.pat, query)
+        result = runGraphqlRequest(config.pat, query)
 
         # extract nodes
         nodes = result["repository"]["releases"]["nodes"]
@@ -202,5 +201,5 @@ def buildReleaseRequestQuery(owner: str, name: str, cursor: str):
             }}
         }}
     }}""".format(
-        owner, name, gql.buildNextPageQuery(cursor)
+        owner, name, buildNextPageQuery(cursor)
     )

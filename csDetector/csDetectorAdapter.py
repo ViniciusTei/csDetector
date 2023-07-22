@@ -1,10 +1,8 @@
-from csDetector import CsDetector
-
+from .csDetector import CsDetector
 
 # this is the adapter class. we can use it to call the adapter from different sources of input
 # by inheriting csDetector, we override the method with bad specified interface with a better
 # one that will call the superclass method after parsing the given input
-
 
 class CsDetectorAdapter(CsDetector):
     def __init__(self):

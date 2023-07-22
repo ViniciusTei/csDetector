@@ -13,9 +13,9 @@ from networkx.algorithms import core
 from networkx.algorithms.community import greedy_modularity_communities
 from progress.bar import Bar
 from collections import Counter
-from utils import authorIdExtractor
-from statsAnalysis import outputStatistics
-from configuration import Configuration
+from ..utils import authorIdExtractor
+from .statsAnalysis import outputStatistics
+from ..configuration import Configuration
 
 
 def centralityAnalysis(

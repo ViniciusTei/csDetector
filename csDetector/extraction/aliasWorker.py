@@ -4,8 +4,8 @@ import yaml
 
 from typing import List
 from progress.bar import Bar
-from utils import authorIdExtractor
-from configuration import Configuration
+from ..utils import authorIdExtractor
+from ..configuration import Configuration
 
 
 def replaceAliases(commits: List[git.Commit], config: Configuration):

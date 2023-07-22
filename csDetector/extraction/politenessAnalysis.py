@@ -2,8 +2,8 @@ import os
 import csv
 import convokit
 
-import statsAnalysis as stats
-from configuration import Configuration
+from .statsAnalysis import calculateStats
+from ..configuration import Configuration
 
 
 def politenessAnalysis(
@@ -25,8 +25,8 @@ def calculateACCL(config, prCommentBatches, issueCommentBatches):
         prCommentLengths = list([len(c) for c in batch])
         issueCommentBatch = list([len(c) for c in issueCommentBatches[batchIdx]])
 
-        prCommentLengthsMean = stats.calculateStats(prCommentLengths)["mean"]
-        issueCommentLengthsMean = stats.calculateStats(issueCommentBatch)["mean"]
+        prCommentLengthsMean = calculateStats(prCommentLengths)["mean"]
+        issueCommentLengthsMean = calculateStats(issueCommentBatch)["mean"]
 
         accl = prCommentLengthsMean + issueCommentLengthsMean / 2
 

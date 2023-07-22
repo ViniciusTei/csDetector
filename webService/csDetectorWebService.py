@@ -3,7 +3,7 @@ import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from flask import jsonify, request, send_file, url_for
-from csDetectorAdapter import CsDetectorAdapter
+from csDetector import CsDetectorAdapter
  
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
