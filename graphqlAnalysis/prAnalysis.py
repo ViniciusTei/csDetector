@@ -338,7 +338,7 @@ def prRequest(
 def buildPrRequestQuery(owner: str, name: str, cursor: str):
     return """{{
         repository(owner: "{0}", name: "{1}") {{
-            pullRequests(first:100{2}) {{
+            pullRequests(first:40{2}) {{
                 pageInfo {{
                     endCursor
                     hasNextPage
@@ -347,7 +347,7 @@ def buildPrRequestQuery(owner: str, name: str, cursor: str):
                     number
                     createdAt
                     closedAt
-                    participants(first: 100) {{
+                    participants(first: 50) {{
                         nodes {{
                             login
                         }}
@@ -355,7 +355,7 @@ def buildPrRequestQuery(owner: str, name: str, cursor: str):
                     commits {{
                         totalCount
                     }}
-                    comments(first: 100) {{
+                    comments(first: 20) {{
                         nodes {{
                             bodyText
                         }}

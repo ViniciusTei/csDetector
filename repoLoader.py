@@ -1,8 +1,6 @@
 import os
 import git  
-from os import path
 from configuration import Configuration
- 
 
 def getRepo(config: Configuration):
     # build path

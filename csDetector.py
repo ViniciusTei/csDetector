@@ -18,6 +18,6 @@ if __name__ == "__main__":
 
     inputData = sys.argv[1:]
     tool = CsDetector()
-    formattedResults, results = tool.executeTool(inputData)
+    formattedResults, results, config = tool.executeTool(inputData)
     print(results)
     print(formattedResults)

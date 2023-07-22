@@ -2,10 +2,10 @@ import flask
 import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
-from flask import jsonify, request, send_file
+from flask import jsonify, request, send_file, url_for
 from csDetectorAdapter import CsDetectorAdapter
  
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
 
 
@@ -62,10 +62,9 @@ def download_file(filename):
     fn = os.path.join(os.getcwd(), filename)
     return send_file(fn)
  
-
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Hello!</h1><p>To execute csDetector, please try running /getSmells?repo=REPOSITORY_URL&pat=GIT_PAT.</p>"
+    return app.send_static_file('index.html')
 
 
 app.run(port=5001, threaded=True)
