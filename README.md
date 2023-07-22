@@ -9,7 +9,7 @@ The purpose of this tool is twofold:
  
 ### The tool can be used in two different ways: 
 
-## **1) Standalone usage**
+## **1) Standalone usage** (Deprecated)
 
 ### Requirements:
 
@@ -33,12 +33,9 @@ The purpose of this tool is twofold:
 ## **2) Manual usage**
 
 ### **2.1 Requirements**
-- Windows 10
-- VSCode 1.45.1
-- PowerShell 7.0.1
-- Python 3.8.3
+- Windows 10/Linux
+- Python > 3.8.3
 - Java 8.0.231
-
 
 ### **2.2 Installation**
 
@@ -57,7 +54,11 @@ Run **installModules.ps1** in PowerShell for a quick and simple setup. This will
 
  Inspect **installModules.ps1** and **requirements.txt** files for a manual installation in an environment that does not have PowerShell. Always remember after the creation of the envirnoment to activate it using the proper activation script inside the **.venv/Scripts** folder.
 
+**3) (Recomended) Makefile**
 
+Run ```make run_setup``` if it is the first time that you are running the tool. Alternatively, you can run ```make venv``` and ```make run```to respectvely activate the virtual environment and run the tool.
+
+Don`t forget to run the Makefile with the **gh_pat** parameter. It is the github personal token to use the github api. Click [here](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to learn about the tokens.
 
 
 ### **2.3 Running**
