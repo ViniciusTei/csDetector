@@ -66,7 +66,7 @@ The tool can be used in two different ways:
 
 ### **2.3.1 Running the tool using CLI**
 
-To run the tool you need run **csdetector.py** with the right parameters. Pass the **--help** parameter to view the documentation. For example:
+To run the tool you need run **csDetector.py** with the right parameters. Pass the **--help** parameter to view the documentation. For example:
 - (-p) for "GitHub PAT (personal access token) used for querying the GitHub API". 
 - **Optional**(-g) for "Google Cloud API Key used for authentication with the Perspective API". 
 - (-r) for "GitHub repository URL that you want to analyse". 
@@ -74,7 +74,7 @@ To run the tool you need run **csdetector.py** with the right parameters. Pass t
 - (-o) for "Local directory path for analysis output".
 - **Optional**(-sd) for “The desired date to start analyzing a project  YYYY-MM-DD”.
 
-### **2.3.2 Using a web service call**
+### **2.3.2 Using a web service call** (Recomended)
 
 To use the tool in this way, you have to run **csDetectorWebService.py** located in the *webservice* folder of the project. To detect the smells on a repository for example, it will only be necessary to open a browser and do a GET request to **http://localhost:5000/getSmells?repo=your_repo_link&pat=your_github_pat**. The response will be in a JSON format where the smells will be indicated using the acronym convention used in [Community Smells Definition](#community-smells-definitions) 
 
