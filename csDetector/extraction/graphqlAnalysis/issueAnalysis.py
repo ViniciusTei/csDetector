@@ -7,7 +7,7 @@ from random import randint
 from ..statsAnalysis import outputStatistics 
 import sentistrength
 from .graphqlAnalysisHelper import runGraphqlRequest, buildNextPageQuery, addLogin
-from ..centralityAnalysis import centralityAnalysis as centrality
+from ..centralityAnalysis import buildGraphQlNetwork 
 from functools import reduce
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
@@ -142,7 +142,7 @@ def issueAnalysis(
 
         toxicityPercentage = getToxicityPercentage(config, allComments)
 
-        centrality.buildGraphQlNetwork(batchIdx, participants, "Issues", config)
+        buildGraphQlNetwork(batchIdx, participants, "Issues", config)
 
         print("Writing GraphQL analysis results")
         with open(
