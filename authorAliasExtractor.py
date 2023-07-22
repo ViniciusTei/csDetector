@@ -5,10 +5,10 @@ import requests
 import sys
 import re
 
-from ..configuration import Configuration, parseAliasArgs
-from repoLoader import getRepo
+from csDetector.configuration import Configuration, parseAliasArgs
+from csDetector.extraction.repoLoader import getRepo
 from progress.bar import Bar
-from ..utils import authorIdExtractor
+from csDetector.utils import authorIdExtractor
 from strsimpy.metric_lcs import MetricLCS
 
 

@@ -87,7 +87,7 @@ def parseAliasArgs(args: Sequence[str]):
 
     args = parser.parse_args()
     config = Configuration(
-        args.repositoryUrl, 0, args.outputPath, "", args.maxDistance, args.pat, ""
+        args.repositoryUrl, 0, args.outputPath, "", args.maxDistance, args.pat, "", args.startDate
     )
 
     return config
