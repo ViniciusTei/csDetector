@@ -1,12 +1,10 @@
 import sys
 import os
-import subprocess
 import shutil
 import stat
 import git
 import pkg_resources
 import sentistrength
-import csv
 import pandas as pd
 
 from .configuration import parseDevNetworkArgs
@@ -23,8 +21,6 @@ from .detection.smellDetection import smellDetection
 from .extraction.politenessAnalysis import politenessAnalysis
 from dateutil.relativedelta import relativedelta
 
-FILEBROWSER_PATH = os.path.join(os.getenv("WINDIR"), "explorer.exe")
-
 communitySmells = [
     {"acronym": "OSE", "name": "Organizational Silo Effect"},
     {"acronym": "BCE", "name": "Black-cloud Effect"},
@@ -38,7 +34,6 @@ communitySmells = [
     {"acronym": "TC", "name": "Toxic Communication"},
 ]
 
-
 # This is the actual target of the adapter pattern, which means has the functionality we need
 def devNetwork(argv):
         # validate running in venv
@@ -48,9 +43,9 @@ def devNetwork(argv):
             )
 
         # validate python version
-        if sys.version_info.major != 3 or sys.version_info.minor != 8:
+        if sys.version_info.major != 3 or sys.version_info.minor > 10:
             raise Exception(
-                "Expected Python 3.8 as runtime but got {0}.{1}, the tool might not run as expected!\nSee README for stack requirements.".format(
+                "Expected Python less then 3.10 as runtime but got {0}.{1}, the tool might not run as expected!\nSee README for stack requirements.".format(
                     sys.version_info.major,
                     sys.version_info.minor,
                     sys.version_info.micro,
@@ -247,13 +242,3 @@ def remove_tree(path):
     else:
         os.remove(path)
 
-
-# https://stackoverflow.com/a/50965628
-def explore(path):
-    # explorer would choke on forward slashes
-    path = os.path.normpath(path)
-
-    if os.path.isdir(path):
-        subprocess.run([FILEBROWSER_PATH, path])
-    elif os.path.isfile(path):
-        subprocess.run([FILEBROWSER_PATH, "/select,", os.path.normpath(path)])
