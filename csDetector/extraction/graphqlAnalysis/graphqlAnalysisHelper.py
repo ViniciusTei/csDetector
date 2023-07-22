@@ -2,15 +2,13 @@ import requests
 import random
 import time
 
-
 def buildNextPageQuery(cursor: str):
     if cursor is None:
         return ""
     return ', after:"{0}"'.format(cursor)
 
-
 def runGraphqlRequest(pat: str, query: str):
-    headers = {"Authorization": "Bearer {0}".format(pat)}
+    headers = {"Authorization": "bearer {0}".format(pat)}
 
     sleepTime = random.randint(0, 8)
     time.sleep(sleepTime)
@@ -28,13 +26,11 @@ def runGraphqlRequest(pat: str, query: str):
         )
     )
 
-
 def addLogin(node, authors: list):
     login = extractAuthorLogin(node)
 
     if not login is None:
         authors.append(login)
-
 
 def extractAuthorLogin(node):
     if node is None or not "login" in node or node["login"] is None:

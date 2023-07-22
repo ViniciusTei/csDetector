@@ -13,7 +13,7 @@ venv: requirements.txt
 	. ./venv/bin/activate
 
 run: 
-	$(PYTHON) csDetector.py -p "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" -r "https://github.com/ersilia-os/ersilia" -s "./senti" -o "./out"
+	$(PYTHON) csDetector.py -p $(gh_pat) -r "https://github.com/ersilia-os/ersilia" -s "./senti" -o "./out"
 
 run_setup: setup run
 
