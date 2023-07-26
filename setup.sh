@@ -44,3 +44,9 @@ wget http://sentistrength.wlv.ac.uk/jkpop/SentiStrength_Data.zip -P ./senti
 # extract to folder
 unzip SentiStrength_Data.zip -d ./senti/SentiStrength_Data
 
+if command_exists java; then
+  exit 0
+else
+  sudo apt install openjdk-8-jdk
+fi
+
