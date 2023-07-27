@@ -20,5 +20,8 @@ run_setup: setup run
 alias_extractor:
 	$(PYTHON) authorAliasExtractor.py -p $(gh_pat) -r "https://github.com/ersilia-os/ersilia" -d 0.75 -o "./out"
 
+test:
+	$(PYTHON) -m pytest --ignore=out
+
 clean:
 	$(shell rm -rf venv)
