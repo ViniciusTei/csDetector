@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>csDetector</title>
-  <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
+<html lang="pt-BR">
+  <head>
+    <title>csDetector</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .bg_img_header {
@@ -102,19 +102,19 @@
       <img src="/static/logo.png" alt="csDetector Logo">
       <ul class="flex gap-2 p-6">
         <li class="cursor-pointer">
-          <a href="#">Home</a>
+          <a href="#">Início</a>
         </li>
         <li class="cursor-pointer">
           <a href="https://github.com/ViniciusTei/csDetector">GitHub</a>
         </li>
         <li class="cursor-pointer">
-          <a href="#about_section">About</a>
+          <a href="#about_section">Sobre</a>
         </li>
       </ul>
     </header>
     <main class="text-white text-center">
-      <h1 class="text-5xl font-semibold mb-4">Community Smells Detector</h1>
-      <p class="font-semibold text-base">Provide developers with a tool to automatically detect community smells in their project.</p>
+      <h1 class="text-5xl font-semibold mb-4">Detector de Communit Smelss</h1>
+      <p class="font-semibold text-base">Fornce uma ferrmanta para os desenvolvedores acharem problemas em suas comunidades.</p>
 
       <form hx-post="/ping" hx-trigger="submit" hx-indicator="#loading" hx-target="#results" class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
         <div class="text-left border-r border-white mr-4 text-black">
@@ -122,30 +122,34 @@
           <input type="text" name="ghToken" id="ghToken" class="px-2">
         </div>
         <div class="text-left border-r border-white mr-4 text-black">
-          <label class="text-xs text-fuchsia-800 font-semibold" for="ghRepo">GitHub Repository</label>
+          <label class="text-xs text-fuchsia-800 font-semibold" for="ghRepo">GitHub Repo</label>
           <input type="text" name="ghRepo" id="ghRepo" class="px-2">
         </div>
         <div>
-          <button type="submit" class="w-[118px] h-[30px] rounded bg-fuchsia-700 hover:brightness-90 active:scale-95 transition-transform">Detect Smells</button>
+          <button type="submit" class="w-[118px] h-[30px] rounded bg-fuchsia-700 hover:brightness-90 active:scale-95 transition-transform">Detectar odores</button>
         </div>
       </form>
       <div id="results" class="text-white my-4"></div>
       <div id="loading" class="htmx-indicator my-4">
-        <p>This could take a while, don't panic!</p>
+        <p>Isso pode levar algum tempo. Não se assuste!</p>
         <div class="lds-spinner mt-2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
     </main>
   </div>
   <div class="mt-[-180px] max-w-[700px] mx-auto bg-white rounded p-2">
     <section>
-      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">What is community smells?</h2>
-      <p class="text-xs">Community smells are powerful indicators of costly sub-optimal conditions within your project's development communities. They act as a radar, highlighting non-cohesive team structures and communication or coordination issues that might lead to social debt.</p>
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">O que é community smells?</h2>
+      <p class="text-xs">Os "community smells" são indicadores poderosos de condições dispendiosas e subótimas dentro das comunidades de desenvolvimento do seu projeto. Eles atuam como um radar, destacando estruturas de equipe não coesas e problemas de comunicação ou coordenação que podem levar a dívidas sociais.</p>
     </section>
     <section id="about_section">
-      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">About</h2>
-      <p class="text-xs">Community smells are telltale signs of sub-optimal organizational and social issues lurking within software development communities. These issues often lead to increased project costs and a decline in software quality. Through extensive research, we've identified a range of community smells linked to less-than-ideal patterns in organizational-social structures within software development communities. <br><br>
-To help you detect these community smells and gain valuable insights into your project's organizational-social structures, we proudly present csDetector - an open-source tool designed to automatically spot community smells and provide relevant socio-technical metrics. Leveraging advanced machine learning techniques, csDetector learns from existing bad community development practices, enabling it to deliver automated support in spotting related community smells. <br><br>
-To prove the effectiveness of csDetector, we conducted evaluations on a benchmark of 143 open-source projects from GitHub. The results were impressive, with csDetector successfully detecting ten commonly occurring community smells in open software projects, achieving an outstanding average F1 score of 84%.</p>
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">Sobre</h2>
+      <p class="text-xs">
+        Os "community smells" são sinais reveladores de questões organizacionais e sociais subótimas que espreitam dentro das comunidades de desenvolvimento de software. Essas questões frequentemente resultam em aumento nos custos do projeto e declínio na qualidade do software. Através de pesquisas extensivas, identificamos uma variedade de "community smells" relacionados a padrões menos ideais nas estruturas organizacionais e sociais das comunidades de desenvolvimento de software.
+        <br><br>
+        Para ajudá-lo a detectar esses "community smells" e obter insights valiosos sobre as estruturas organizacionais e sociais do seu projeto, apresentamos com orgulho o csDetector - uma ferramenta de código aberto projetada para detectar automaticamente os "community smells" e fornecer métricas sócio-técnicas relevantes. Utilizando técnicas avançadas de aprendizado de máquina, o csDetector aprende a partir de práticas de desenvolvimento comunitário deficientes existentes, permitindo que ele forneça suporte automatizado na identificação de "community smells" relacionados.
+        <br><br>
+        Para comprovar a eficácia do csDetector, realizamos avaliações em um benchmark de 143 projetos de código aberto do GitHub. Os resultados foram impressionantes, com o csDetector detectando com sucesso dez "community smells" comuns em projetos de software aberto, alcançando uma impressionante média de pontuação F1 de 84%.
+      </p>
     </section>
   </div>
    
@@ -156,7 +160,7 @@ To prove the effectiveness of csDetector, we conducted evaluations on a benchmar
 
   <script>
     document.addEventListener('htmx:responseError', function(event) {
-        alert('Something went wrong with the request!');
+        alert('Algo deu errado ao fazer a requisição!');
     })
   </script>
   </body>

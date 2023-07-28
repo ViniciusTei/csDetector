@@ -1,5 +1,5 @@
 import flask
-import os, sys
+import os, sys, time
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from flask import jsonify, request, send_file, url_for
@@ -7,7 +7,6 @@ from lib import csDetectorAdapter
  
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
-
 
 @app.route('/getSmells', methods=['GET'])
 def getSmells():
@@ -65,7 +64,17 @@ def download_file(filename):
  
 @app.route('/', methods=['GET'])
 def home():
+    user_language = request.accept_languages
+    user_prefered = user_language[0][0]
+    if (user_prefered == "pt-BR" or user_prefered == "pt"):
+        return app.send_static_file('index.pt.html')
     return app.send_static_file('index.html')
 
+@app.route('/ping', methods=['POST'])
+def ping():
+    print('got to the server')
+    print(request.form)
+    time.sleep(3)
+    return jsonify({"message": "ok"})
 
 app.run(port=5001, threaded=True)
