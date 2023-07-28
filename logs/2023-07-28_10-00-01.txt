@@ -1,0 +1,396 @@
+2023-07-28 10:00:01,309 - INFO - Started application
+2023-07-28 10:00:01,971 - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=<valid stream>)
+2023-07-28 10:00:01,992 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:02,070 - DEBUG - Popen(['git', 'cat-file', '--batch'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=<valid stream>)
+2023-07-28 10:00:02,623 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:02,644 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:02,830 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,004 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,028 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,133 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,147 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,329 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,496 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,516 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,636 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,803 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:03,950 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,146 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,273 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,447 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,603 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,622 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,761 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:04,912 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,054 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,104 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,282 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,316 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,357 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,498 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,600 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,764 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:05,963 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,125 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,339 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,515 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,612 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,760 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:06,903 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,064 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,160 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,306 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,563 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,659 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:07,861 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,046 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,242 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,390 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,547 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,569 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,598 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,716 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,854 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:08,933 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,060 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,201 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,253 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,394 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,552 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,572 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,713 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,750 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:09,867 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,029 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,211 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,310 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,516 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,703 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,737 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:10,910 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:11,082 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:11,229 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:11,289 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:11,467 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:11,618 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:12,078 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/8d65ce22c50376c4b951029cfe8ac25a309a54b4 HTTP/1.1" 200 None
+2023-07-28 10:00:12,081 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:12,513 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/cf4134488c7aa8445eddb129fe0e64b27d5fbafc HTTP/1.1" 200 None
+2023-07-28 10:00:12,517 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:12,982 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/b6b4b15973338a361172a061b3a5107e03e22ecc HTTP/1.1" 200 None
+2023-07-28 10:00:13,004 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:13,404 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/aab0d4f0640f291c4b32a20f50604e863b08b6ad HTTP/1.1" 200 None
+2023-07-28 10:00:13,411 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:13,793 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/eb278bbf57a82bb5106d39d8e084d9a6369fe83a HTTP/1.1" 200 None
+2023-07-28 10:00:13,797 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:14,229 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c HTTP/1.1" 200 None
+2023-07-28 10:00:14,235 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:14,623 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/dcd45e771929f60075ad705a68ae314494c5c030 HTTP/1.1" 200 None
+2023-07-28 10:00:14,628 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:15,042 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/a2df62381d5d773e28daffe487cf1aaca0f9f35f HTTP/1.1" 200 None
+2023-07-28 10:00:15,046 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:15,492 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/243653995e3d2d413a76e087fdc366833d8fdbc9 HTTP/1.1" 200 None
+2023-07-28 10:00:15,500 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:15,918 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/324ce3dd9cdd3937302e2c27c53c2738829113d0 HTTP/1.1" 200 None
+2023-07-28 10:00:15,925 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:16,478 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/0d2bd908068c4e57b330a0b550bd3fe8164579e4 HTTP/1.1" 200 None
+2023-07-28 10:00:16,519 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:16,919 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/4dfbda775ba5212f5b6200065a0b1db8eaf47fbb HTTP/1.1" 200 None
+2023-07-28 10:00:16,928 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:17,286 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/806b4304719d007bb3cc7cded25f6b472065d5c3 HTTP/1.1" 200 None
+2023-07-28 10:00:17,294 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:17,692 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/2f1627aad516b182fa709418c68141a5ad5c94ce HTTP/1.1" 200 None
+2023-07-28 10:00:17,698 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:18,100 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/b3c6dcad36e3adc53fd2a1a75b247adf0c22b2af HTTP/1.1" 200 None
+2023-07-28 10:00:18,106 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:18,542 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/0700fc32af8cb517bd3a3b7a4c1c01dea4e413a4 HTTP/1.1" 200 None
+2023-07-28 10:00:18,548 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:18,984 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/30c0e082112f5457562b10a72d3302437476a7b1 HTTP/1.1" 200 None
+2023-07-28 10:00:18,989 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:19,401 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/4ae5700992e912ce847c35c61a663314786a48c4 HTTP/1.1" 200 None
+2023-07-28 10:00:19,407 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:19,785 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/a486bed8aa822c82af3f45b161674c05df46dd27 HTTP/1.1" 200 None
+2023-07-28 10:00:19,792 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:20,183 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/6c1d4363d81f2aabb9c85e379a0c812ffb257882 HTTP/1.1" 200 None
+2023-07-28 10:00:20,189 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:20,590 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/e7f64517c2d0881119cfcdc379054b79dffab6f0 HTTP/1.1" 200 None
+2023-07-28 10:00:20,595 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:21,029 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/210e22a7de694acf0d277947941a56785a63d0c1 HTTP/1.1" 200 None
+2023-07-28 10:00:21,034 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:21,462 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/1c1f47be6bc1e6edb8805312a863c100bc1e875d HTTP/1.1" 200 None
+2023-07-28 10:00:21,469 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:21,844 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/5d48917298ff5c69adb986d6624d915abe146c38 HTTP/1.1" 200 None
+2023-07-28 10:00:21,851 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:22,260 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/4044fdcde5130627c35e8e18514218e387392b35 HTTP/1.1" 200 None
+2023-07-28 10:00:22,267 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:22,632 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/38fba676b48e35942d0f3ec74f9fc8225c37adb9 HTTP/1.1" 200 None
+2023-07-28 10:00:22,636 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:23,003 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/e29d1706d35744a5204f7de2996218eb49b01937 HTTP/1.1" 200 None
+2023-07-28 10:00:23,006 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:23,438 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/5b4147ff0d7b6b2b407a4ecbba2f23996dcfd3c0 HTTP/1.1" 200 None
+2023-07-28 10:00:23,443 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:23,790 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/023f03149b4619f58992eb5af22d09068ae8aa05 HTTP/1.1" 200 None
+2023-07-28 10:00:23,808 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:24,219 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/cd09243405cf7b3049d80c864fdcdc9fa7bbcb48 HTTP/1.1" 200 None
+2023-07-28 10:00:24,227 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:24,590 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/28514be3ceaf2a7b683486d21ca7bdb16975df82 HTTP/1.1" 200 None
+2023-07-28 10:00:24,596 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:24,999 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/8a3ecc37df7db588b1283302e0e5a2eaf080a52b HTTP/1.1" 200 None
+2023-07-28 10:00:25,004 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:25,404 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/02b9fcfc6e466d182c5cdfb39af66ed95be263b0 HTTP/1.1" 200 None
+2023-07-28 10:00:25,408 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:25,820 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/f31311121a674afac8ac054fe49f892df4db72b0 HTTP/1.1" 200 None
+2023-07-28 10:00:25,828 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:26,203 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/2fab5d739594b4419e8801c0a2987685af865629 HTTP/1.1" 200 None
+2023-07-28 10:00:26,207 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:26,878 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/2eddcafdd2ae7ce8f996b33a8d2b2dddb5f6f7d5 HTTP/1.1" 200 None
+2023-07-28 10:00:26,885 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:27,265 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/c4ad8ec009d6a50049b00c6d92b13c77fe2fd95f HTTP/1.1" 200 None
+2023-07-28 10:00:27,271 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:27,637 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/40717a5e69821feb88c6c508e276901d755051a1 HTTP/1.1" 200 None
+2023-07-28 10:00:27,643 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:28,010 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/9111b938205b2309b1f3d93ecbec9525d4be27c5 HTTP/1.1" 200 None
+2023-07-28 10:00:28,015 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:28,418 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/4bc4c0905c4d317d0c0f2facafe02f5e50646ad7 HTTP/1.1" 200 None
+2023-07-28 10:00:28,425 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:28,891 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/65f6219642cbfaf5d39c44fe8bff7336ef22546b HTTP/1.1" 200 None
+2023-07-28 10:00:28,897 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:29,276 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/701742e69eae7daac75cad1bd8a8da3791d974b0 HTTP/1.1" 200 None
+2023-07-28 10:00:29,280 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:29,629 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/5078c7e02209f905a7e67dc798ef61f82a90badf HTTP/1.1" 200 None
+2023-07-28 10:00:29,632 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:30,182 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/e2ba5d169bdd202cd97f7e0a37031f4717ca77f3 HTTP/1.1" 200 None
+2023-07-28 10:00:30,186 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:30,573 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/40e9be2607f4e7f3805929e0ab30bdf0423df152 HTTP/1.1" 200 None
+2023-07-28 10:00:30,577 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:30,938 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/fccdef5623f5f83ab357728f445c25b6b8cc7fca HTTP/1.1" 200 None
+2023-07-28 10:00:30,943 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:31,348 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/c08f4b005509c6a4f73fb37357d91e3efec6ad24 HTTP/1.1" 200 None
+2023-07-28 10:00:31,353 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:31,787 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/c9646f99cec83ce6e9056013b51b72f93d59c453 HTTP/1.1" 200 None
+2023-07-28 10:00:31,793 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:32,253 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/8d6d87e60ff682fb46884d32843b8f5cff37e0fd HTTP/1.1" 200 None
+2023-07-28 10:00:32,259 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:32,664 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/dea0bdb128d37946c1cce1aaefe7ead8dd54c52b HTTP/1.1" 200 None
+2023-07-28 10:00:32,672 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:33,187 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/50d4cbb7a6ce670a8f34df33d3dd0dce2fcb8dbb HTTP/1.1" 200 None
+2023-07-28 10:00:33,314 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:33,681 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/69fa604cfe7e9c1cd944721aa938e3f050ca6393 HTTP/1.1" 200 None
+2023-07-28 10:00:33,686 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:34,128 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/050d6e3947b842d12f1f3f55cd3450ee9ee9433f HTTP/1.1" 200 None
+2023-07-28 10:00:34,133 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:34,520 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/4fbe9b58b2724f055505926f9b09bd44af2f8155 HTTP/1.1" 200 None
+2023-07-28 10:00:34,528 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:34,983 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/78f3b103983317874dc3375b1734c27a70dcdb42 HTTP/1.1" 200 None
+2023-07-28 10:00:35,107 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:35,502 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/589cb637e1b710490489ebb7b68bc2ae489e3be5 HTTP/1.1" 200 None
+2023-07-28 10:00:35,514 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:35,896 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/6892971e8933a8e08508be5ef5ed381d96502da7 HTTP/1.1" 200 None
+2023-07-28 10:00:35,901 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:36,340 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/ba8ef9b4cc15878d4e800219e5a8c093d8de4755 HTTP/1.1" 200 None
+2023-07-28 10:00:36,345 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:36,690 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/3d311e36ec62381635128a9f5925ad932332c9c4 HTTP/1.1" 200 None
+2023-07-28 10:00:36,698 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:37,097 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/e9b54dc3428ada864b5085a9a7d38aec2981023a HTTP/1.1" 200 None
+2023-07-28 10:00:37,101 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:37,497 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/05fc0836c35802e420ae92df0441921c5bb6b230 HTTP/1.1" 200 None
+2023-07-28 10:00:37,505 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:37,882 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/cd929f4720f2b7d70030bad8ce4b8fa116e1d7d5 HTTP/1.1" 200 None
+2023-07-28 10:00:37,886 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:38,267 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/6e4d5074eb92dbf8555953802d9771c17adfcbca HTTP/1.1" 200 None
+2023-07-28 10:00:38,273 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:38,588 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/bce8dd8830ab44cb85d186d1c3a6207a6f0868ec HTTP/1.1" 200 None
+2023-07-28 10:00:38,595 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:38,994 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/d17030b983d006f679cf2d1df3838fbbbc5db411 HTTP/1.1" 200 None
+2023-07-28 10:00:38,998 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:39,322 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/9f50d662658c4dfc40590a4d6f1132754f41c50c HTTP/1.1" 200 None
+2023-07-28 10:00:39,326 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:39,700 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/8c123f996174a624aaac0295d2060d41d406ecc7 HTTP/1.1" 200 None
+2023-07-28 10:00:39,706 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:40,078 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/616554d3b153f06b9865face2d321ee75d885fa6 HTTP/1.1" 200 None
+2023-07-28 10:00:40,083 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:40,483 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/8f3bd292d0baeea93ab917fd6d6c18522eeb4880 HTTP/1.1" 200 None
+2023-07-28 10:00:40,490 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:40,875 - DEBUG - https://api.github.com:443 "GET /repos/ersilia-os/ersilia/commits/eb3b87f859d192b817b08159a58e66df53b8fa75 HTTP/1.1" 200 None
+2023-07-28 10:00:40,886 - INFO - Writing aliases to './out/ersilia-os/ersilia/aliases.yml'
+2023-07-28 10:00:40,902 - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=<valid stream>)
+2023-07-28 10:00:40,916 - DEBUG - Popen(['git', 'rev-list', 'a69ebc6b6da7f56d9c5d968a59ae1ec602932d6c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:40,928 - INFO - Cleaning aliased authors
+2023-07-28 10:00:40,948 - DEBUG - Popen(['git', 'cat-file', '--batch'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=<valid stream>)
+2023-07-28 10:00:42,706 - DEBUG - Popen(['git', 'rev-list', '76a9359ad1cadc1834f532c84f930194a2faf082', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,727 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', '76a9359ad1cadc1834f532c84f930194a2faf082', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,745 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', '17da429e350c16471f313827747886fa2423e515', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,764 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', 'a53e555f4a9bf056d41887e9d3d67a7346a6f841', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,780 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', 'b9860eaa7e5b9a81bb6d66054367fef4d70879c6', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,801 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', 'b9860eaa7e5b9a81bb6d66054367fef4d70879c6', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,821 - DEBUG - Popen(['git', 'rev-list', '--after=2021-01-10', '2fd7d8197883b8644d5c12ae3b7c5ed2ccf6740c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,843 - DEBUG - Popen(['git', 'rev-list', '--after=2021-04-07', '8f86cb37b4c2745e8dbe02f2249afc83e5a1636b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,863 - DEBUG - Popen(['git', 'rev-list', '--after=2021-04-07', '69b33bcd8a008dcac24553aa566b21fe282021a5', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,882 - DEBUG - Popen(['git', 'rev-list', '--after=2022-01-27', '69b33bcd8a008dcac24553aa566b21fe282021a5', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,899 - DEBUG - Popen(['git', 'rev-list', '--after=2022-01-27', '8497dd71a0d5f6461cae68bc2e7394b5935a3c8d', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,918 - DEBUG - Popen(['git', 'rev-list', '--after=2022-01-27', 'a3013d402f0c0d0b4c7d548500458d15670b3d43', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,937 - DEBUG - Popen(['git', 'rev-list', '--after=2022-01-28', '1c820602709c366b329fc80c9f29337a973741e7', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,958 - DEBUG - Popen(['git', 'rev-list', '--after=2022-10-06', '2097853990970a48bbb0cb0b77a988906d502f3b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,976 - DEBUG - Popen(['git', 'rev-list', '--after=2022-10-10', '941fa18a08dbf6d32d2bce3b3690d3a0ec45e1d2', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:42,992 - DEBUG - Popen(['git', 'rev-list', '--after=2022-10-31', '952c6125fae8e58ba859f892787d889a717e069c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,012 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', '635823eed258452db22afe577a1e1e7960707fb3', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,030 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', '7aacc2aef9e8e83a4ff2fbb12ee77edee5974cb1', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,046 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', '7aacc2aef9e8e83a4ff2fbb12ee77edee5974cb1', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,067 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', 'eceae56459b6f80bd4a2ffeacc3bdd5f2ec9f4b0', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,083 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', '9c20094c65333c2d141bc010b5566e06eb5d8292', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,099 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', 'd56190663d6495cc18e11d07b6ee2f6784ee35b6', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,115 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', 'dbcc64ac493cf9c13fe7fff172c390176266368b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,132 - DEBUG - Popen(['git', 'rev-list', '--after=2023-05-15', 'da3793594dbe90ca7f1e3645381fbcd1ccd28e1f', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,151 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-14', '3115e2c8dbf75a5823d9c54468ec42b2d7891e62', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,170 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-14', '290d9312660571c3a9faa9bb28e01968828be78b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,186 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-14', '290d9312660571c3a9faa9bb28e01968828be78b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,204 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-14', '8ec9021eb2de3ad7a004131ff048e9d07365a87b', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,221 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-20', '15088c3e53c86247f4cd14d4572de5584143981c', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,239 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-27', 'd23c1455fa9c7ab00d03dc50422b27a43fd13bf7', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,256 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-27', '028dbf2bc3f7a759422e3a60145263a00a8e923e', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:43,272 - DEBUG - Popen(['git', 'rev-list', '--after=2023-06-28', 'd627c3c33be6caf32d058e377e047bc23d16c076', '--'], cwd=/home/vinicius/www/poc/csDetector/out/ersilia-os/ersilia/ersilia-os.ersilia, universal_newlines=False, shell=None, istream=None)
+2023-07-28 10:00:45,897 - DEBUG - Loaded backend agg version v2.2.
+2023-07-28 10:00:45,904 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+2023-07-28 10:00:45,904 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:45,904 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,905 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 1.335
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,906 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 1.05
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,907 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,908 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:45,909 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2023-07-28 10:00:45,910 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2023-07-28 10:00:45,910 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:45,910 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+2023-07-28 10:00:46,339 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=20.0.
+2023-07-28 10:00:46,339 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,340 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 1.335
+2023-07-28 10:00:46,341 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,342 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 1.05
+2023-07-28 10:00:46,343 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,343 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:46,343 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,343 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,343 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,344 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,345 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2023-07-28 10:00:46,346 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 0.33499999999999996
+2023-07-28 10:00:46,346 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 0.05
+2023-07-28 10:00:46,346 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2023-07-28 10:00:46,346 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=20.0 to DejaVu Sans ('/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+2023-07-28 10:00:46,359 - DEBUG - Assigning font /F1 = '/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf'
+2023-07-28 10:00:46,413 - DEBUG - Embedding font /home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf.
+2023-07-28 10:00:46,414 - DEBUG - Writing TrueType font.
+2023-07-28 10:00:46,656 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:47,043 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:00:55,066 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:00:58,557 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:00:59,565 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:02,555 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:05,566 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:08,580 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:13,591 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:16,530 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:22,545 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:25,220 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:31,232 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:33,313 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:42,338 - DEBUG - Assigning font /F1 = '/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf'
+2023-07-28 10:01:42,475 - DEBUG - Embedding font /home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf.
+2023-07-28 10:01:42,475 - DEBUG - Writing TrueType font.
+2023-07-28 10:01:43,683 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:01:48,862 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:01:54,900 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:01,529 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:03,588 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:10,396 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:12,433 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:16,386 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:21,423 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:25,983 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:27,018 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:31,639 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:31,695 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:36,060 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:37,124 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:41,861 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:44,923 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:02:50,308 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:02:55,345 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:03:01,175 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:03:08,216 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:03:16,171 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:03:24,277 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:03:27,682 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:03:27,801 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
+2023-07-28 10:03:32,089 - DEBUG - https://api.github.com:443 "POST /graphql HTTP/1.1" 200 None
+2023-07-28 10:04:39,072 - DEBUG - Assigning font /F1 = '/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf'
+2023-07-28 10:04:39,487 - DEBUG - Embedding font /home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf.
+2023-07-28 10:04:39,487 - DEBUG - Writing TrueType font.
+2023-07-28 10:04:50,020 - DEBUG - Assigning font /F1 = '/home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf'
+2023-07-28 10:04:50,557 - DEBUG - Embedding font /home/vinicius/www/poc/csDetector/venv/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf.
+2023-07-28 10:04:50,558 - DEBUG - Writing TrueType font.

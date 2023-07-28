@@ -3,9 +3,12 @@ import sys
 
 if __name__ == "__main__":
     logger = logger.Logger()
-    logger.log("info","Started application")
     inputData = sys.argv[1:]
-    tool = csDetector()
-    formattedResults, results, config = tool.executeTool(inputData)
-    print(results)
-    print(formattedResults)
+    tool = csDetector.CsDetector()
+    results = tool.executeTool(inputData)
+
+    # print results
+    for r in results:
+        (_, formated) = r
+        for key in formated:
+            print(key, formated[key])
