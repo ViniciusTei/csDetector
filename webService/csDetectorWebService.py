@@ -3,7 +3,7 @@ import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from flask import jsonify, request, send_file, url_for
-from csDetector import CsDetectorAdapter
+from lib import csDetectorAdapter
  
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
@@ -37,22 +37,23 @@ def getSmells():
     except:
         pass
 
-    tool = CsDetectorAdapter()
+    tool = csDetectorAdapter.CsDetectorAdapter()
     if date is not None:
         print(date)
         els = str(date).split("/")
         sd = els[2]+"-"+els[1]+"-"+els[0]
         print(sd)
-        formattedResult, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
+        result = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
     else:
-        formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
+        result = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
 
     paths=[]
     if needed_graphs:
-        paths.append(os.path.join(config.resultsPath, f"commitCentrality_0.pdf"))
-        paths.append(os.path.join(config.resultsPath, f"Issues_0.pdf"))
-        paths.append(os.path.join(config.resultsPath, f"issuesAndPRsCentrality_0.pdf"))
-        paths.append(os.path.join(config.resultsPath, f"PRs_0.pdf"))
+        #paths.append(os.path.join(config.resultsPath, f"commitCentrality_0.pdf"))
+        #paths.append(os.path.join(config.resultsPath, f"Issues_0.pdf"))
+        #paths.append(os.path.join(config.resultsPath, f"issuesAndPRsCentrality_0.pdf"))
+        #configpaths.append(os.path.join(config.resultsPath, f"PRs_0.pdf"))
+        print("Return some config bro")
     
     r = jsonify({"result": result, "files":paths})
     return r

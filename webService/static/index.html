@@ -5,9 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>csDetector</title>
   <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg_img_header {
+      background-image: url('/static/bg.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      min-height: 600px;
+      box-shadow: 0px 17px 15px 1px rgba(0,0,0, 0.7);
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello csDetector</h1>
-  <p>To execute csDetector, please try running /getSmells?repo=REPOSITORY_URL&pat=GIT_PAT.</p>
-</body>
+  <div class="bg_img_header bg-black">
+    <header class="text-white flex justify-between">
+      <img src="/static/logo.png" alt="csDetector Logo">
+      <ul class="flex gap-2 p-6">
+        <li class="cursor-pointer">Home</li>
+        <li class="cursor-pointer">GitHub</li>
+        <li class="cursor-pointer">About</li>
+      </ul>
+    </header>
+    <main class="text-white text-center">
+      <h1 class="text-5xl font-semibold mb-4">Community Smells Detector</h1>
+      <p class="font-semibold text-base">Provide developers with a tool to automatically detect community smells in their project.</p>
+
+      <div class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
+        <div class="text-left border-r border-white mr-4">
+          <label class="text-xs text-fuchsia-800 font-semibold" for="ghToken">GitHub Token</label>
+          <input type="text" name="ghToken" id="ghToken">
+        </div>
+        <div class="text-left border-r border-white mr-4">
+          <label class="text-xs text-fuchsia-800 font-semibold" for="ghRepo">GitHub Repository</label>
+          <input type="text" name="ghRepo" id="ghRepo">
+        </div>
+        <div>
+          <button type="button" class="w-[118px] h-[30px] rounded bg-fuchsia-700">Detect Smells</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="mt-[-180px] max-w-[700px] mx-auto bg-white rounded p-2">
+    <section>
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">What is community smells?</h2>
+      <p class="text-xs">Community smells are powerful indicators of costly sub-optimal conditions within your project's development communities. They act as a radar, highlighting non-cohesive team structures and communication or coordination issues that might lead to social debt.</p>
+    </section>
+    <section>
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">About</h2>
+      <p class="text-xs">Community smells are telltale signs of sub-optimal organizational and social issues lurking within software development communities. These issues often lead to increased project costs and a decline in software quality. Through extensive research, we've identified a range of community smells linked to less-than-ideal patterns in organizational-social structures within software development communities. <br><br>
+To help you detect these community smells and gain valuable insights into your project's organizational-social structures, we proudly present csDetector - an open-source tool designed to automatically spot community smells and provide relevant socio-technical metrics. Leveraging advanced machine learning techniques, csDetector learns from existing bad community development practices, enabling it to deliver automated support in spotting related community smells. <br><br>
+To prove the effectiveness of csDetector, we conducted evaluations on a benchmark of 143 open-source projects from GitHub. The results were impressive, with csDetector successfully detecting ten commonly occurring community smells in open software projects, achieving an outstanding average F1 score of 84%.</p>
+    </section>
+  </div>
+   
+
+  <footer class="bg-black/75 flex items-center justify-center">
+    <img src="/static/logo.png" alt="csDetector Logo">
+  </footer>
+  </body>
 </html>

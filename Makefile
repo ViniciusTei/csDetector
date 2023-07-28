@@ -17,8 +17,8 @@ run:
 
 run_setup: setup run
 
-alias_extractor:
-	$(PYTHON) authorAliasExtractor.py -p $(gh_pat) -r "https://github.com/ersilia-os/ersilia" -d 0.75 -o "./out"
+run_web:
+	$(PYTHON) webService/csDetectorWebService.py 
 
 test:
 	$(PYTHON) -m pytest --ignore=out --pat=$(gh_pat)
