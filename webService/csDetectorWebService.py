@@ -1,10 +1,10 @@
 import flask
 import os, sys, time
+from flask import jsonify, request, send_file
+from lib import csDetectorAdapter
+
 p = os.path.abspath('.')
 sys.path.insert(1, p)
-from flask import jsonify, request, send_file, url_for
-from lib import csDetectorAdapter
- 
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
 
@@ -32,16 +32,15 @@ def getSmells():
     if 'date' in request.args:
         date = request.args['date']
     try:
-        os.mkdir("../out/output_"+user)
-    except:
+        os.mkdir(os.path.join(os.getcwd() + "/out/output_"+user))
+    except Exception as e:
+        print('error creating folder', e)
         pass
 
     tool = csDetectorAdapter.CsDetectorAdapter()
     if date is not None:
-        print(date)
         els = str(date).split("/")
         sd = els[2]+"-"+els[1]+"-"+els[0]
-        print(sd)
         result = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
     else:
         result = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
