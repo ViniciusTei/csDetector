@@ -5,96 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .bg_img_header {
-      background-image: url('/static/bg.png');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      min-height: 600px;
-      box-shadow: 0px 17px 15px 1px rgba(0,0,0, 0.7);
-    }
-    .lds-spinner {
-      color: official;
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-    .lds-spinner div {
-      transform-origin: 40px 40px;
-      animation: lds-spinner 1.2s linear infinite;
-    }
-    .lds-spinner div:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: 3px;
-      left: 37px;
-      width: 6px;
-      height: 18px;
-      border-radius: 20%;
-      background: #fff;
-    }
-    .lds-spinner div:nth-child(1) {
-      transform: rotate(0deg);
-      animation-delay: -1.1s;
-    }
-    .lds-spinner div:nth-child(2) {
-      transform: rotate(30deg);
-      animation-delay: -1s;
-    }
-    .lds-spinner div:nth-child(3) {
-      transform: rotate(60deg);
-      animation-delay: -0.9s;
-    }
-    .lds-spinner div:nth-child(4) {
-      transform: rotate(90deg);
-      animation-delay: -0.8s;
-    }
-    .lds-spinner div:nth-child(5) {
-      transform: rotate(120deg);
-      animation-delay: -0.7s;
-    }
-    .lds-spinner div:nth-child(6) {
-      transform: rotate(150deg);
-      animation-delay: -0.6s;
-    }
-    .lds-spinner div:nth-child(7) {
-      transform: rotate(180deg);
-      animation-delay: -0.5s;
-    }
-    .lds-spinner div:nth-child(8) {
-      transform: rotate(210deg);
-      animation-delay: -0.4s;
-    }
-    .lds-spinner div:nth-child(9) {
-      transform: rotate(240deg);
-      animation-delay: -0.3s;
-    }
-    .lds-spinner div:nth-child(10) {
-      transform: rotate(270deg);
-      animation-delay: -0.2s;
-    }
-    .lds-spinner div:nth-child(11) {
-      transform: rotate(300deg);
-      animation-delay: -0.1s;
-    }
-    .lds-spinner div:nth-child(12) {
-      transform: rotate(330deg);
-      animation-delay: 0s;
-    }
-    @keyframes lds-spinner {
-      0% {
-        opacity: 1;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg_img_header {
+        background-image: url('/static/bg.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 600px;
+        box-shadow: 0px 17px 15px 1px rgba(0,0,0, 0.7);
       }
-      100% {
-        opacity: 0;
+      .lds-spinner {
+        color: official;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
       }
-    }
+      .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+      }
+      .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 37px;
+        width: 6px;
+        height: 18px;
+        border-radius: 20%;
+        background: #fff;
+      }
+      .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+      }
+      .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+      }
+      .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+      }
+      .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+      }
+      .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+      }
+      .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+      }
+      .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+      }
+      .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+      }
+      .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+      }
+      .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+      }
+      .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+      }
+      .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+      }
+      @keyframes lds-spinner {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
 
-  </style>
+    </style>
 </head>
 <body>
   <div class="bg_img_header bg-black">
@@ -113,8 +113,8 @@
       </ul>
     </header>
     <main class="text-white text-center">
-      <h1 class="text-5xl font-semibold mb-4">Detector de Communit Smelss</h1>
-      <p class="font-semibold text-base">Fornce uma ferrmanta para os desenvolvedores acharem problemas em suas comunidades.</p>
+      <h1 class="text-5xl font-semibold mb-4">Detector de Community Smells</h1>
+      <p class="font-semibold text-base">Fornece uma ferrmanta para os desenvolvedores acharem problemas em suas comunidades.</p>
 
       <form hx-post="/ping" hx-trigger="submit" hx-indicator="#loading" hx-target="#results" class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
         <div class="text-left border-r border-white mr-4 text-black">
