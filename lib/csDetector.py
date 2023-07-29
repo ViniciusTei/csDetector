@@ -7,5 +7,4 @@ class CsDetector:
 
     def executeTool(self, argv):
         cs_builder = csBuilder.CSBuilder(argv)
-        results = cs_builder.getCommunitySmells()
-        return results
+        return cs_builder.getCommunitySmells()

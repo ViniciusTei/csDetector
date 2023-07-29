@@ -116,7 +116,7 @@
       <h1 class="text-5xl font-semibold mb-4">Detector de Community Smells</h1>
       <p class="font-semibold text-base">Fornece uma ferrmanta para os desenvolvedores acharem problemas em suas comunidades.</p>
 
-      <form hx-post="/ping" hx-trigger="submit" hx-indicator="#loading" hx-target="#results" class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
+      <form hx-post="/getSmells/html" hx-trigger="submit" hx-indicator="#loading" hx-target="#results" class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
         <div class="text-left border-r border-white mr-4 text-black">
           <label class="text-xs text-fuchsia-800 font-semibold" for="ghToken">GitHub Token</label>
           <input type="text" name="ghToken" id="ghToken" class="px-2">

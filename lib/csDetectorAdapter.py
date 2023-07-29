@@ -24,7 +24,7 @@ class CsDetectorAdapter(CsDetector):
 if __name__ == "__main__":
 
     tool = CsDetectorAdapter()
-    formattedResult, result = tool.executeTool("https://github.com/tensorflow/ranking",
+    formattedResult, result, _ = tool.executeTool("https://github.com/tensorflow/ranking",
                                                "")
     print(result)
     print(formattedResult)

@@ -1,10 +1,10 @@
 import flask
-import os, sys, time
-from flask import jsonify, request, send_file
-from lib import csDetectorAdapter
-
+import os, sys, time, stat
 p = os.path.abspath('.')
 sys.path.insert(1, p)
+from flask import jsonify, request, send_file, url_for
+from lib import csDetectorAdapter
+
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
 
@@ -32,7 +32,7 @@ def getSmells():
     if 'date' in request.args:
         date = request.args['date']
     try:
-        os.mkdir(os.path.join(os.getcwd() + "/out/output_"+user))
+        os.mkdir("../out/output_"+user)
     except Exception as e:
         print('error creating folder', e)
         pass
@@ -41,17 +41,16 @@ def getSmells():
     if date is not None:
         els = str(date).split("/")
         sd = els[2]+"-"+els[1]+"-"+els[0]
-        result = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
+        formattedResult, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
     else:
-        result = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
+        formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
 
     paths=[]
     if needed_graphs:
-        #paths.append(os.path.join(config.resultsPath, f"commitCentrality_0.pdf"))
-        #paths.append(os.path.join(config.resultsPath, f"Issues_0.pdf"))
-        #paths.append(os.path.join(config.resultsPath, f"issuesAndPRsCentrality_0.pdf"))
-        #configpaths.append(os.path.join(config.resultsPath, f"PRs_0.pdf"))
-        print("Return some config bro")
+        paths.append(os.path.join(config.resultsPath, f"commitCentrality_0.pdf"))
+        paths.append(os.path.join(config.resultsPath, f"Issues_0.pdf"))
+        paths.append(os.path.join(config.resultsPath, f"issuesAndPRsCentrality_0.pdf"))
+        paths.append(os.path.join(config.resultsPath, f"PRs_0.pdf"))
     
     r = jsonify({"result": result, "files":paths})
     return r
@@ -69,11 +68,22 @@ def home():
         return app.send_static_file('index.pt.html')
     return app.send_static_file('index.html')
 
-@app.route('/ping', methods=['POST'])
+@app.route('/getSmells/html', methods=['POST'])
 def ping():
-    print('got to the server')
     print(request.form)
-    time.sleep(3)
-    return jsonify({"message": "ok"})
+    repo = request.form.get('ghRepo')
+    pat = request.form.get('ghToken')
+    if not repo:
+        return "Error: No repo field provided. Please specify a repo.", 400
+
+    if not pat:
+        return "Error: No pat field provided. Please specify a pat.", 400
+
+    tool = csDetectorAdapter.CsDetectorAdapter()
+
+    formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_default")
+    print("Detected Smells", formattedResult)
+
+    return jsonify({"result": result})
 
 app.run(port=5001, threaded=True)
