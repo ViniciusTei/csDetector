@@ -1,5 +1,5 @@
 import flask
-import os, sys, time, stat
+import os, sys, logging 
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from flask import jsonify, request, send_file, url_for
@@ -34,16 +34,16 @@ def getSmells():
     try:
         os.mkdir("../out/output_"+user)
     except Exception as e:
-        print('error creating folder', e)
+        logging.error(f"Error creating file: {e}")
         pass
 
     tool = csDetectorAdapter.CsDetectorAdapter()
     if date is not None:
         els = str(date).split("/")
         sd = els[2]+"-"+els[1]+"-"+els[0]
-        formattedResult, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
+        _, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
     else:
-        formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
+        _, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
 
     paths=[]
     if needed_graphs:
@@ -70,7 +70,6 @@ def home():
 
 @app.route('/getSmells/html', methods=['POST'])
 def ping():
-    print(request.form)
     repo = request.form.get('ghRepo')
     pat = request.form.get('ghToken')
     if not repo:
@@ -81,8 +80,8 @@ def ping():
 
     tool = csDetectorAdapter.CsDetectorAdapter()
 
-    formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_default")
-    print("Detected Smells", formattedResult)
+    formattedResult, result, _ = tool.executeTool(repo, pat, outputFolder="out/output_default")
+    logging.info(f"Detected Smells: {formattedResult}")
 
     return jsonify({"result": result})
 
