@@ -1,0 +1,2 @@
+2023-07-29 11:15:49,801 - INFO - Writing aliases to './out/ersilia-os/ersilia/aliases.yml'
+2023-07-29 11:15:49,835 - INFO - Cleaning aliased authors

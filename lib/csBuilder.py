@@ -198,7 +198,9 @@ class CSBuilder():
     def getCommunitySmells(self):
         commits = self.__mineDevelopersAliases()
         authorInfoDict, batchDates, coreDevs, prParticipantBatches, issueParticipantBatches = self.__buildSocialNetworkGraphs(commits)
-        return self.__computSentimentsMetrics(authorInfoDict, batchDates, prParticipantBatches, issueParticipantBatches, coreDevs)
+        result = self.__computSentimentsMetrics(authorInfoDict, batchDates, prParticipantBatches, issueParticipantBatches, coreDevs)
+        detectedSmells, detectedSmellsDict = result[0]
+        return detectedSmells, detectedSmellsDict, self.__config
 
 communitySmells = [
     {"acronym": "OSE", "name": "Organizational Silo Effect"},

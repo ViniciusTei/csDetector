@@ -1,13 +1,12 @@
 import flask
-import os, sys
+import os, sys, logging 
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from flask import jsonify, request, send_file, url_for
-from csDetector import CsDetectorAdapter
- 
+from lib import csDetectorAdapter
+
 app = flask.Flask(__name__, static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = "/"
-
 
 @app.route('/getSmells', methods=['GET'])
 def getSmells():
@@ -34,18 +33,17 @@ def getSmells():
         date = request.args['date']
     try:
         os.mkdir("../out/output_"+user)
-    except:
+    except Exception as e:
+        logging.error(f"Error creating file: {e}")
         pass
 
-    tool = CsDetectorAdapter()
+    tool = csDetectorAdapter.CsDetectorAdapter()
     if date is not None:
-        print(date)
         els = str(date).split("/")
         sd = els[2]+"-"+els[1]+"-"+els[0]
-        print(sd)
-        formattedResult, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
+        _, result, config = tool.executeTool(repo, pat, startingDate=sd, outputFolder="out/output_"+user)
     else:
-        formattedResult, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
+        _, result, config = tool.executeTool(repo, pat, outputFolder="out/output_"+user)
 
     paths=[]
     if needed_graphs:
@@ -64,7 +62,27 @@ def download_file(filename):
  
 @app.route('/', methods=['GET'])
 def home():
+    user_language = request.accept_languages
+    user_prefered = user_language[0][0]
+    if (user_prefered == "pt-BR" or user_prefered == "pt"):
+        return app.send_static_file('index.pt.html')
     return app.send_static_file('index.html')
 
+@app.route('/getSmells/html', methods=['POST'])
+def ping():
+    repo = request.form.get('ghRepo')
+    pat = request.form.get('ghToken')
+    if not repo:
+        return "Error: No repo field provided. Please specify a repo.", 400
 
-app.run(port=5001, threaded=True)
+    if not pat:
+        return "Error: No pat field provided. Please specify a pat.", 400
+
+    tool = csDetectorAdapter.CsDetectorAdapter()
+
+    formattedResult, result, _ = tool.executeTool(repo, pat, outputFolder="out/output_default")
+    logging.info(f"Detected Smells: {formattedResult}")
+
+    return jsonify({"result": result})
+
+app.run(host="0.0.0.0", port=5001, threaded=True)

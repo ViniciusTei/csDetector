@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>csDetector</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg_img_header {
+        background-image: url('/static/bg.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 600px;
+        box-shadow: 0px 17px 15px 1px rgba(0,0,0, 0.7);
+      }
+      .lds-spinner {
+        color: official;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+      }
+      .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 37px;
+        width: 6px;
+        height: 18px;
+        border-radius: 20%;
+        background: #fff;
+      }
+      .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+      }
+      .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+      }
+      .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+      }
+      .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+      }
+      .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+      }
+      .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+      }
+      .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+      }
+      .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+      }
+      .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+      }
+      .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+      }
+      .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+      }
+      .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+      }
+      @keyframes lds-spinner {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+    </style>
+</head>
+<body>
+  <div class="bg_img_header bg-black">
+    <header class="text-white flex justify-between">
+      <img src="/static/logo.png" alt="csDetector Logo">
+      <ul class="flex gap-2 p-6">
+        <li class="cursor-pointer">
+          <a href="#">Início</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="https://github.com/ViniciusTei/csDetector">GitHub</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="#about_section">Sobre</a>
+        </li>
+      </ul>
+    </header>
+    <main class="text-white text-center">
+      <h1 class="text-5xl font-semibold mb-4">Detector de Community Smells</h1>
+      <p class="font-semibold text-base">Fornece uma ferrmanta para os desenvolvedores acharem problemas em suas comunidades.</p>
+
+      <form hx-post="/getSmells/html" hx-trigger="submit" hx-indicator="#loading" hx-target="#results" class="mt-8 flex items-center bg-white/75 max-w-[600px] mx-auto rounded p-4">
+        <div class="text-left border-r border-white mr-4 text-black">
+          <label class="text-xs text-fuchsia-800 font-semibold" for="ghToken">GitHub Token</label>
+          <input type="text" name="ghToken" id="ghToken" class="px-2">
+        </div>
+        <div class="text-left border-r border-white mr-4 text-black">
+          <label class="text-xs text-fuchsia-800 font-semibold" for="ghRepo">GitHub Repo</label>
+          <input type="text" name="ghRepo" id="ghRepo" class="px-2">
+        </div>
+        <div>
+          <button type="submit" class="w-[118px] h-[30px] rounded bg-fuchsia-700 hover:brightness-90 active:scale-95 transition-transform">Detectar odores</button>
+        </div>
+      </form>
+      <div id="results" class="text-white my-4"></div>
+      <div id="loading" class="htmx-indicator my-4">
+        <p>Isso pode levar algum tempo. Não se assuste!</p>
+        <div class="lds-spinner mt-2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </div>
+    </main>
+  </div>
+  <div class="mt-[-180px] max-w-[700px] mx-auto bg-white rounded p-2">
+    <section>
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">O que é community smells?</h2>
+      <p class="text-xs">Os "community smells" são indicadores poderosos de condições dispendiosas e subótimas dentro das comunidades de desenvolvimento do seu projeto. Eles atuam como um radar, destacando estruturas de equipe não coesas e problemas de comunicação ou coordenação que podem levar a dívidas sociais.</p>
+    </section>
+    <section id="about_section">
+      <h2 class="my-4 text-fuchsia-800 text-base font-semibold">Sobre</h2>
+      <p class="text-xs">
+        Os "community smells" são sinais reveladores de questões organizacionais e sociais subótimas que espreitam dentro das comunidades de desenvolvimento de software. Essas questões frequentemente resultam em aumento nos custos do projeto e declínio na qualidade do software. Através de pesquisas extensivas, identificamos uma variedade de "community smells" relacionados a padrões menos ideais nas estruturas organizacionais e sociais das comunidades de desenvolvimento de software.
+        <br><br>
+        Para ajudá-lo a detectar esses "community smells" e obter insights valiosos sobre as estruturas organizacionais e sociais do seu projeto, apresentamos com orgulho o csDetector - uma ferramenta de código aberto projetada para detectar automaticamente os "community smells" e fornecer métricas sócio-técnicas relevantes. Utilizando técnicas avançadas de aprendizado de máquina, o csDetector aprende a partir de práticas de desenvolvimento comunitário deficientes existentes, permitindo que ele forneça suporte automatizado na identificação de "community smells" relacionados.
+        <br><br>
+        Para comprovar a eficácia do csDetector, realizamos avaliações em um benchmark de 143 projetos de código aberto do GitHub. Os resultados foram impressionantes, com o csDetector detectando com sucesso dez "community smells" comuns em projetos de software aberto, alcançando uma impressionante média de pontuação F1 de 84%.
+      </p>
+    </section>
+  </div>
+   
+
+  <footer class="bg-black/75 flex items-center justify-center">
+    <img src="/static/logo.png" alt="csDetector Logo">
+  </footer>
+
+  <script>
+    document.addEventListener('htmx:responseError', function(event) {
+        alert('Algo deu errado ao fazer a requisição!');
+    })
+  </script>
+  </body>
+</html>

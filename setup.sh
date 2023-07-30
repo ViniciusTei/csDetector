@@ -4,8 +4,8 @@
 # the folders that is going to be used by the tool.
 
 # create folders to posterior use
-mkdir senti
-mkdir out
+mkdir -p senti
+mkdir -p out
 
 # Function to check if a command is available
 command_exists() {
@@ -19,10 +19,10 @@ else
   # Check if the package manager (apt) is available
   if command_exists apt; then
     # Update package lists
-    sudo apt update
+    apt update
 
     # Install unzip using apt
-    sudo apt install -y unzip
+    apt install -y unzip
 
     # Check if installation was successful
     if [ $? -eq 0 ]; then
@@ -47,6 +47,9 @@ unzip SentiStrength_Data.zip -d ./senti/SentiStrength_Data
 if command_exists java; then
   exit 0
 else
-  sudo apt install openjdk-8-jdk
+  apt install openjdk-8-jdk
 fi
+
+#convokit
+python3 -m spacy download en_core_web_sm
 
