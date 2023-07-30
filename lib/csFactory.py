@@ -19,7 +19,7 @@ from lib.extraction.politenessAnalysis import politenessAnalysis
 from lib.detection.smellDetection import smellDetection
 from lib.utils import remove_tree
 
-class CSBuilder():
+class CSFactory():
     def __init__(self, argv) -> None:
         # validate running in venv
         if not hasattr(sys, "prefix"):
