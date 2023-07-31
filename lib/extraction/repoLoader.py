@@ -10,7 +10,8 @@ def getRepo(config: Configuration):
     )
     # get repository reference
     repo = None
-    if not os.path.exists(repoPath):
+    fullRepoPath = os.path.join(os.getcwd(), repoPath)
+    if not os.path.exists(fullRepoPath):
         print("Downloading repository...")
         repo = git.Repo.clone_from(
             config.repositoryUrl,
