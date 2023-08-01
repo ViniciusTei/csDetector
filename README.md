@@ -75,21 +75,62 @@ To run the tool you need run **csDetector.py** with the right parameters. Pass t
 - (-o) for "Local directory path for analysis output".
 - **Optional**(-sd) for “The desired date to start analyzing a project  YYYY-MM-DD”.
 
-### **2.3.2 Using a web service call** (Recomended)
+### **2.3.2 Using a web service call** 
 
 To use the tool in this way, you have to run **csDetectorWebService.py** located in the *webservice* folder of the project. To detect the smells on a repository for example, it will only be necessary to open a browser and do a GET request to **http://localhost:5000/getSmells?repo=your_repo_link&pat=your_github_pat**. The response will be in a JSON format where the smells will be indicated using the acronym convention used in [Community Smells Definition](#community-smells-definitions) 
 
-## **3) Optional Configuration**
+#### **With Docker** (Recomended)
 
-### **aliasSimilarityMaxDistance (float)**
-For documentation on changing this value see:  
-https://github.com/luozhouyang/python-string-similarity#metric-longest-common-subsequence  
-*Ex: 0.75*
+The best way to use the tool locally is to use the [docker](https://docs.docker.com/get-started/02_our_app/) container.
+All the applicantion is setup with the docker file and setup.sh script. You can use the following commands to run the container:
+
+**Step 1: Install Docker**
+
+Ensure Docker is installed on your computer. If not, download and install it from [here](https://docs.docker.com/get-started/02_our_app/).
+
+**Step 2: Build CSDetector Image**
+
+Open a terminal, navigate to the CSDetector project's root directory, and run:
+
+```bash
+docker build -t csdetector .
+```
+
+**Step 3: Run CSDetector**
+
+Start CSDetector in a Docker container:
+
+```bash
+docker run -dp 5001:5001 csdetector
+```
+
+**Step 4: Access CSDetector**
+
+You can access CSDetector through the API or the landing page.
+
+- **Using the API:** Make POST requests to relevant endpoints to detect code smells.
+
+- **Using the Landing Page:** Open your web browser and go to http://localhost:5001. Use the user-friendly interface for results.
+
+**Additional Info (Optional):**
+
+- To work with CSDetector's code directly, mount your project directory inside the container:
+
+```bash
+docker run -it --mount "type=bind,source=$(pwd),target=/app" csdetector
+```
+
+You've set up CSDetector with Docker. Happy coding and detecting smells in your projects! Refer to our documentation or contact support for more details. Enjoy coding!
 
 ### **Aliases**
 It is recommended to generate and massage author aliases prior to analyzing repositories to minimize the number of duplicate users who have historically used multiple emails for their commits skewing the developer network analysis.
 
 To generate author aliases, run **authorAliasExtractor.py** with the right parameters. Pass **--help** for parameter documentation.
+
+#### **aliasSimilarityMaxDistance (float)**
+For documentation on changing this value see:  
+https://github.com/luozhouyang/python-string-similarity#metric-longest-common-subsequence  
+*Ex: 0.75*
 
 ## **4) References**
 - GitHub GraphQL API Explorer  
