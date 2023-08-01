@@ -4,6 +4,7 @@ import math
 import sys
 import sentistrength
 import threading
+import logging
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
 from datetime import datetime, timezone
@@ -21,7 +22,7 @@ def issueAnalysis(
     batchDates: List[datetime],
 ):
 
-    print("Querying issue comments")
+    logging.info("Querying issue comments")
     batches = issueRequest(
         config.pat, config.repositoryOwner, config.repositoryName, delta, batchDates
     )
@@ -30,7 +31,7 @@ def issueAnalysis(
     batchComments = list()
 
     for batchIdx, batch in enumerate(batches):
-        print(f"Analyzing issue batch #{batchIdx}")
+        logging.info(f"Analyzing issue batch #{batchIdx}")
 
         # extract data from batch
         issueCount = len(batch)
@@ -44,7 +45,7 @@ def issueAnalysis(
         issueNegativeComments = list()
         generallyNegative = list()
 
-        print(f"    Sentiments per issue", end="")
+        logging.info(f"    Sentiments per issue", end="")
 
         semaphore = threading.Semaphore(15)
         threads = []
@@ -106,7 +107,7 @@ def issueAnalysis(
         for thread in threads:
             thread.join()
 
-        print("")
+        logging.info("")
 
         # save comments
         batchComments.append(allComments)
@@ -119,7 +120,7 @@ def issueAnalysis(
         # get pr duration stats
         durations = [(pr["closedAt"] - pr["createdAt"]).days for pr in batch]
 
-        print("    All sentiments")
+        logging.info("    All sentiments")
 
         # analyze comment issue sentiment
         commentSentiments = []
@@ -139,7 +140,7 @@ def issueAnalysis(
 
         buildGraphQlNetwork(batchIdx, participants, "Issues", config)
 
-        print("Writing GraphQL analysis results")
+        logging.info("Writing GraphQL analysis results")
         with open(
             os.path.join(config.resultsPath, f"results_{batchIdx}.csv"),
             "a",
@@ -251,7 +252,7 @@ def analyzeSentiments(
             if commentSentimentsNegative / len(comments) > 0.5:
                 generallyNegative.append(True)
 
-            print(f".", end="")
+            logging.info(f".", end="")
 
 
 def issueRequest(
@@ -270,7 +271,7 @@ def issueRequest(
         # get page of PRs
         query = buildIssueRequestQuery(owner, name, cursor)
         result = runGraphqlRequest(pat, query)
-        print("...")
+        logging.info(f"Quering GraphQL: {query}")
 
         # extract nodes
         nodes = result["repository"]["issues"]["nodes"]

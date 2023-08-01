@@ -4,6 +4,7 @@ import csv
 import sys
 import sentistrength
 import threading
+import logging
 from dateutil.parser import isoparse
 from typing import List
 from datetime import datetime, timezone
@@ -21,7 +22,7 @@ def prAnalysis(
     batchDates: List[datetime],
 ):
 
-    print("Querying PRs")
+    logging.info("Querying PRs")
     batches = prRequest(
         config.pat, config.repositoryOwner, config.repositoryName, delta, batchDates
     )
@@ -30,7 +31,7 @@ def prAnalysis(
     batchComments = list()
 
     for batchIdx, batch in enumerate(batches):
-        print(f"Analyzing PR batch #{batchIdx}")
+        logging.info(f"Analyzing PR batch #{batchIdx}")
 
         # extract data from batch
         prCount = len(batch)
@@ -44,7 +45,7 @@ def prAnalysis(
         prNegativeComments = list()
         generallyNegative = list()
 
-        print(f"    Sentiments per PR", end="")
+        logging.info(f"Sentiments per PR")
 
         semaphore = threading.Semaphore(15)
         threads = []
@@ -107,7 +108,7 @@ def prAnalysis(
         for thread in threads:
             thread.join()
 
-        print("")
+        logging.info("")
 
         # save comments
         batchComments.append(allComments)
@@ -120,7 +121,7 @@ def prAnalysis(
         # get pr duration stats
         durations = [(pr["closedAt"] - pr["createdAt"]).days for pr in batch]
 
-        print("    All sentiments")
+        logging.info("Analyzing PR batch  All sentiments")
 
         commentSentiments = []
         commentSentimentsPositive = 0
@@ -139,7 +140,7 @@ def prAnalysis(
 
         buildGraphQlNetwork(batchIdx, participants, "PRs", config)
 
-        print("    Writing results")
+        logging.info("  Analyzing PR batch  Writing results")
         with open(
             os.path.join(config.resultsPath, f"results_{batchIdx}.csv"),
             "a",
@@ -258,7 +259,7 @@ def analyzeSentiments(
             if commentSentimentsNegative / len(comments) > 0.5:
                 generallyNegative.append(True)
 
-            print(f".", end="")
+            logging.info(f".", end="")
 
 
 def prRequest(
@@ -276,7 +277,7 @@ def prRequest(
 
         # get page
         result = runGraphqlRequest(pat, query)
-        print("...")
+        logging.info(f"Quering GraphQL: {query}")
 
         # extract nodes
         nodes = result["repository"]["pullRequests"]["nodes"]

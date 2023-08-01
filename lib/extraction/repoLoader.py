@@ -16,7 +16,6 @@ def getRepo(config: Configuration):
         repo = git.Repo.clone_from(
             config.repositoryUrl,
             repoPath,
-            branch="master",
             progress=Progress(),
             odbt=git.GitCmdObjectDB,
         )

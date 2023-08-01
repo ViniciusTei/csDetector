@@ -1,6 +1,7 @@
 import os
 import csv
 import git
+import logging
 from dateutil.relativedelta import relativedelta
 from dateutil.parser import isoparse
 from datetime import datetime
@@ -19,7 +20,7 @@ def releaseAnalysis(
     # sort commits by ascending commit date
     allCommits.sort(key=lambda c: c.committed_datetime)
 
-    print("Querying releases")
+    logging.info("Querying releases")
     batches = releaseRequest(config, delta, batchDates)
 
     for batchIdx, batch in enumerate(batches):
@@ -78,7 +79,7 @@ def releaseAnalysis(
             )
         }
 
-        print("Writing results")
+        logging.info("Writing results")
         with open(
             os.path.join(config.resultsPath, f"results_{batchIdx}.csv"), "a", newline=""
         ) as f:

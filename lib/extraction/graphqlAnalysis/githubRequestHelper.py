@@ -16,12 +16,23 @@ class GithubRequestHelper:
                 return response
             else:
                 self._token = None
-        except Exception as e:
+        except:
             self._token = None
 
-    def numeroTotalPaginas(self, url):
-        response = self.requests(url=url)
-        if response.links.keys():
-            return int(response.link['last']['url'].partition('&page=')[-1])
-        else:
-            return 1
+    def getRequestsTotalPages(self, url):
+        try:
+            response = self.requests(url=url)
+            if response.links.keys():
+                return int(response.link['last']['url'].partition('&page=')[-1])
+            else:
+                return 1
+        except Exception as e:
+            raise Exception(f"Query execution failed {e}")
+
+
+class PullRequestsExctractor(GithubRequestHelper):
+    def __init__(self) -> None:
+        super().__init__()
+    def requestPR(self):
+        totalPages = self.getRequestsTotalPages('pullRequests')
+        response = self.requests('pullRequests')
