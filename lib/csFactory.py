@@ -64,6 +64,7 @@ class CSFactory():
 
         # parse args
         self.__config = parseDevNetworkArgs(argv)
+        
         # prepare folders
         if os.path.exists(self.__config.resultsPath):
             remove_tree(self.__config.resultsPath)

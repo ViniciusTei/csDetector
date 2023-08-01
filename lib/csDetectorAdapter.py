@@ -1,4 +1,5 @@
 from lib.csDetector import CsDetector
+import logging
 
 # this is the adapter class. we can use it to call the adapter from different sources of input
 # by inheriting csDetector, we override the method with bad specified interface with a better
@@ -11,14 +12,17 @@ class CsDetectorAdapter(CsDetector):
     def executeTool(self, gitRepository, gitPAT, startingDate="null", sentiFolder="./senti", outputFolder="./out"):
 
         if(startingDate == "null"):
+            arguments = ["-p", gitPAT, "-r", gitRepository, "-s", sentiFolder, "-o", outputFolder]
+            logging.info(f"Excuting tool with: {arguments}")
+            print(f"Excuting tool with: {arguments}")
             # in this branch we execute the tool normally because no date was provided
-            return super().executeTool(
-                ["-p", gitPAT, "-r", gitRepository, "-s", sentiFolder, "-o", outputFolder])
-
         else:
+            arguments = ["-p", gitPAT, "-r", gitRepository, "-s", sentiFolder, "-o", outputFolder, '-sd', startingDate]
+            logging.info(f"Excuting tool with: {arguments}")
+            print(f"Excuting tool with: {arguments}")
             # if a date is specified we have to execute with one more parameter
-            return super().executeTool(['-p', gitPAT, '-r', gitRepository,
-                                        '-s', sentiFolder, '-o', outputFolder, '-sd', startingDate])
+        
+        return super().executeTool(arguments)
 
 
 if __name__ == "__main__":

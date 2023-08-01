@@ -1,6 +1,7 @@
 import git
 import shutil
 import os
+import stat
 
 def remove_readonly(fn, path, excinfo):
     os.chmod(path, stat.S_IWRITE)

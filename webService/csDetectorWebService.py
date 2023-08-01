@@ -80,7 +80,7 @@ def ping():
 
     tool = csDetectorAdapter.CsDetectorAdapter()
 
-    formattedResult, result, _ = tool.executeTool(repo, pat, outputFolder="out/output_default")
+    formattedResult, result, _ = tool.executeTool(repo, pat)
     logging.info(f"Detected Smells: {formattedResult}")
 
     return jsonify({"result": result})
