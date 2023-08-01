@@ -33,6 +33,7 @@ class GithubRequestHelper:
 class PullRequestsExctractor(GithubRequestHelper):
     def __init__(self) -> None:
         super().__init__()
+    
     def requestPR(self):
         totalPages = self.getRequestsTotalPages('pullRequests')
         response = self.requests('pullRequests')
