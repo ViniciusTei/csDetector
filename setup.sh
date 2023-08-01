@@ -19,10 +19,10 @@ else
   # Check if the package manager (apt) is available
   if command_exists apt; then
     # Update package lists
-    apt update
+    apt-get update -y
 
     # Install unzip using apt
-    apt install -y unzip
+    apt-get install -y unzip
 
     # Check if installation was successful
     if [ $? -eq 0 ]; then
@@ -47,7 +47,7 @@ unzip SentiStrength_Data.zip -d ./senti/SentiStrength_Data
 if command_exists java; then
   exit 0
 else
-  apt install openjdk-8-jdk
+  apt-get install -y openjdk-8-jdk
 fi
 
 #convokit
