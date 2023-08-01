@@ -42,10 +42,10 @@ wget http://sentistrength.wlv.ac.uk/jkpop/SentiStrength.jar -P ./senti
 wget http://sentistrength.wlv.ac.uk/jkpop/SentiStrength_Data.zip -P ./senti
 
 # extract to folder
-unzip SentiStrength_Data.zip -d ./senti/SentiStrength_Data
+unzip ./senti/SentiStrength_Data.zip -d ./senti/SentiStrength_Data
 
 if command_exists java; then
-  exit 0
+  echo "java has already been installed"
 else
   apt-get install -y openjdk-8-jdk
 fi
