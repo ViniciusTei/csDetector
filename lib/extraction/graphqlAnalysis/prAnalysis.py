@@ -1,4 +1,5 @@
 import math
+import graphene
 import os
 import csv
 import sys
@@ -269,18 +270,23 @@ def prRequest(
 
     # prepare batches
     batches = []
-    batch = None
+    batch = []
     batchStartDate = None
     batchEndDate = None
 
     while True:
 
         # get page
-        result = runGraphqlRequest(pat, query)
-        logging.info(f"Quering GraphQL: {query}")
+        schema = graphene.Schema(query=PullRequestsQuery)
+        result = schema.execute(query)
+        logging.info(f"Quering Pull Requests GraphQL")
+
+        if result.errors:
+            logging.error(f'GraphQL Error: {result.errors}')
+            break
 
         # extract nodes
-        nodes = result["repository"]["pullRequests"]["nodes"]
+        nodes = result.data["repository"]["pullRequests"]["nodes"]
 
         # add results
         for node in nodes:
@@ -320,7 +326,7 @@ def prRequest(
             batch.append(pr)
 
         # check for next page
-        pageInfo = result["repository"]["pullRequests"]["pageInfo"]
+        pageInfo = result.data["repository"]["pullRequests"]["pageInfo"]
         if not pageInfo["hasNextPage"]:
             break
 
@@ -332,8 +338,37 @@ def prRequest(
 
     return batches
 
+class Participant(graphene.ObjectType):
+    login = graphene.String()
 
-def buildPrRequestQuery(owner: str, name: str, cursor: str):
+class Comment(graphene.ObjectType):
+    bodyText = graphene.String()
+
+class PullRequest(graphene.ObjectType):
+    number = graphene.Int()
+    createdAt = graphene.String()
+    closedAt = graphene.String()
+    participants = graphene.List(Participant)
+    commits = graphene.Field(graphene.Int)
+    comments = graphene.List(Comment)
+
+class PageInfo(graphene.ObjectType):
+    endCursor = graphene.String()
+    hasNextPage = graphene.Boolean()
+
+class PullRequestsQuery(graphene.ObjectType):
+    repository = graphene.Field(
+        PullRequest,
+        owner=graphene.String(required=True),
+        name=graphene.String(required=True),
+    )
+
+    def resolve_repository(self, info, owner, name):
+        query = buildPrRequestQuery(owner, name, info.context.get('cursor'))
+        return runGraphqlRequest(info.context.get('access_token'), query)
+         
+
+def buildPrRequestQuery(owner: str, name: str, cursor):
     return """{{
         repository(owner: "{0}", name: "{1}") {{
             pullRequests(first:40{2}) {{
