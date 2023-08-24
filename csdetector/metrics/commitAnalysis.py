@@ -65,7 +65,7 @@ class CommitAnalysis():
         batchDates = []
 
         for commit in self._commits:
-            if startDate is not None and commit.committed_datetime < startDate:
+            if startDate is not None and startDate > commit.committed_datetime:
                 continue
 
             if batchStartDate is None:
@@ -200,9 +200,9 @@ class CommitAnalysis():
         firstCommitDate = None
         lastCommitDate = None
         if firstDate is not None:
-            firstCommitDate = datetime.fromtimestamp(firstDate)
+            firstCommitDate = datetime.fromtimestamp(firstDate.timestamp())
         if lastDate is not None:
-            lastCommitDate = datetime.fromtimestamp(lastDate)
+            lastCommitDate = datetime.fromtimestamp(lastDate.timestamp())
         daysActive = 0
         if lastCommitDate is not None:
             daysActive = (lastCommitDate - firstCommitDate).days
