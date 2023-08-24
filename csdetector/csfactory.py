@@ -5,6 +5,7 @@ from git.repo import Repo
 
 from csdetector import Configuration, utils
 from csdetector.metrics.authorAlias import AuthorAlias
+from csdetector.metrics.commitAnalysis import CommitAnalysis
 
 class CSFactory:
     _config: Configuration
@@ -42,6 +43,9 @@ class CSFactory:
         # B - build social network graphs
         delta = relativedelta(months=+self._config.batchMonths)
         commits = list(authorAliasExtractor.replaceAliases())
+
+        commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
+        commitAnalysis.extract()
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics
