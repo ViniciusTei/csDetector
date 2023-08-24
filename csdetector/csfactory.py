@@ -45,7 +45,7 @@ class CSFactory:
         commits = list(authorAliasExtractor.replaceAliases())
 
         commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
-        commitAnalysis.extract()
+        batchDates, authorInfoDict, daysActive = commitAnalysis.extract()
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics
