@@ -6,6 +6,7 @@ from git.repo import Repo
 from csdetector import Configuration, utils
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.commitAnalysis import CommitAnalysis
+from csdetector.metrics.tagAnalysis import TagAnalysis
 
 class CSFactory:
     _config: Configuration
@@ -46,6 +47,9 @@ class CSFactory:
 
         commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
         batchDates, authorInfoDict, daysActive = commitAnalysis.extract()
+
+        TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
+        
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics
