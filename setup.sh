@@ -6,6 +6,7 @@
 # create folders to posterior use
 mkdir -p senti
 mkdir -p out
+mkdir -p logs
 
 # Function to check if a command is available
 command_exists() {
