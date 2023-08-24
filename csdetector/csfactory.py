@@ -1,4 +1,5 @@
 import os
+from dateutil.relativedelta import relativedelta
 import sentistrength
 from git.repo import Repo
 
@@ -34,7 +35,16 @@ class CSFactory:
         self._senti.setSentiStrengthLanguageFolderPath(sentiDataPath)
 
     def detect(self):
+        # A - mine developer aliases
         authorAliasExtractor = AuthorAlias(self._config, self._repo)
-        authorAlias = authorAliasExtractor.extract()
-        print(authorAlias)
+        authorAliasExtractor.extract()
+
+        # B - build social network graphs
+        delta = relativedelta(months=+self._config.batchMonths)
+        commits = list(authorAliasExtractor.replaceAliases())
+
+        # C - Compute Sentiment metrics
+        # D - Compute Social metrics
+        # E - Smell Detection with pre-trained models
+        
         return ['a', 'b', 'c']
