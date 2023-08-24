@@ -1,11 +1,11 @@
 import logging
 import re
+from git.repo import Repo
 from strsimpy.metric_lcs import MetricLCS
 
 from csdetector import Configuration
 from csdetector.github.GitHubResquestCommits import GitHubRequestCommits
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper 
-from csdetector.utils import getRepo
 
 # TODO: add output to file
 # TODO: filter out emails that belong to bot accounts
@@ -13,11 +13,11 @@ class AuthorAlias:
     _request: GitHubRequestHelper
     _aliases: dict
 
-    def __init__(self, config: Configuration):
+    def __init__(self, config: Configuration, repo: Repo):
         self._config = config
         self._request = GitHubRequestHelper()
         self._request.init_tokens(self._config)
-        self._repo = getRepo(self._config)
+        self._repo = repo
 
     # apply Levenshtein distance to the local part of the email
     def _areSimilar(self, valueA: str, valueB: str, maxDistance: float):

@@ -1,9 +1,12 @@
 import os
+from git.repo import Repo
 
 from csdetector import Configuration, utils
 from csdetector.metrics.authorAlias import AuthorAlias
 
 class CSFactory:
+    _config: Configuration
+    _repo: Repo
     def __init__(self, config: Configuration):
         self._config = config
         
@@ -17,7 +20,7 @@ class CSFactory:
         self._repo = utils.getRepo(self._config)
 
     def detect(self):
-        authorAliasExtractor = AuthorAlias(self._config)
+        authorAliasExtractor = AuthorAlias(self._config, self._repo)
         authorAlias = authorAliasExtractor.extract()
         print(authorAlias)
         return ['a', 'b', 'c']
