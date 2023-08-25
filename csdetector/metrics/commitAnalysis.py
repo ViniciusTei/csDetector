@@ -72,6 +72,7 @@ class CommitAnalysis():
                 batchStartDate = commit.committed_datetime
                 batchEndDate = batchStartDate + self._delta
 
+                batchDates.append(batchStartDate)
             elif commit.committed_datetime > batchEndDate:
                 batches.append(batch)
                 batch = []
