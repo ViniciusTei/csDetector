@@ -4,7 +4,8 @@ import logging
 import datetime
 import os
 
-from csdetector import config, csfactory
+from csdetector.config import initialize_config
+from csdetector.csfactory import CSFactory
 
 # define logging 
 def generate_filename_with_datetime():
@@ -14,8 +15,7 @@ def generate_filename_with_datetime():
     abs_path = os.path.abspath(f"logs/{filename}")
     return abs_path
 
-filename=generate_filename_with_datetime()
-logging.basicConfig(filename=filename, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+LOG_FILENAME=generate_filename_with_datetime()
 
 if __name__ == "__main__":
     # validate running in venv
@@ -59,9 +59,21 @@ if __name__ == "__main__":
                 missing
             )
         )
+
     args = sys.argv[1:]
-    global_configuration = config.initialize_config(args)
+    global_configuration, DEBUG = initialize_config(args)
+
+    logging.basicConfig(
+        filename=LOG_FILENAME, 
+        level=DEBUG and logging.DEBUG or logging.INFO, 
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+
+    logging.debug("Started with DEBUG mode enabled")
     logging.info("CsDetector started, analysing repository: {0}".format(global_configuration.repositoryUrl))
-    smells = csfactory.CSFactory(global_configuration).detect()
+
+    smells = CSFactory(global_configuration).detect()
     logging.info("CsDetector finished, found {0} smells.".format(len(smells)))
     print(smells)
+    

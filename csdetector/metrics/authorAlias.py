@@ -106,9 +106,11 @@ class AuthorAlias:
         # returm dictionary of aliases
         # key: alias
         # value: list of emails
+        logging.info("Extracted {} aliases".format(len(aliases)))
         return aliases
 
     def replaceAliases(self):
+        logging.info("Replacing aliases")
         if self._aliases is None:
             raise Exception("Aliases are not extracted yet, run extract() first")
 

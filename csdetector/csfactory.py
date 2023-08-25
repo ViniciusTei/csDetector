@@ -1,3 +1,4 @@
+import logging
 import os
 from dateutil.relativedelta import relativedelta
 import sentistrength
@@ -5,6 +6,7 @@ from git.repo import Repo
 
 from csdetector import Configuration, utils
 from csdetector.metrics.authorAlias import AuthorAlias
+from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
 from csdetector.metrics.tagAnalysis import TagAnalysis
 
@@ -47,8 +49,12 @@ class CSFactory:
 
         commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
         batchDates, authorInfoDict, daysActive = commitAnalysis.extract()
+        logging.info("Batch dates: {}".format(batchDates))
 
         TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
+
+        coreDevs = CentralityAnalysis(self._config, commits, delta, batchDates).extract()
+        print(coreDevs)
         
 
         # C - Compute Sentiment metrics

@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 from typing import List
 from dateutil.relativedelta import relativedelta
 from git import Commit
@@ -11,37 +12,6 @@ import os
 from csdetector import Configuration
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 
-def outputStatistics(idx: int, data, metric: str, outputDir: str):
-
-    # validate
-    if len(data) < 1:
-        return
-
-    # calculate and output
-    stats = calculateStats(data)
-
-    # output
-    with open(os.path.join(outputDir, f"results_{idx}.csv"), "a", newline="") as f:
-        w = csv.writer(f, delimiter=",")
-
-        for key in stats:
-            outputValue(w, metric, key, stats)
-
-def calculateStats(data):
-
-    stats = dict(
-        count=len(data),
-        mean=statistics.mean(data),
-        stdev=statistics.stdev(data) if len(data) > 1 else None
-    )
-
-    return stats
-
-
-def outputValue(w, metric: str, name: str, dict: dict):
-    value = dict[name]
-    name = "{0}_{1}".format(metric, name)
-    w.writerow([name, value])
 class CommitAnalysis():
     def __init__(self, senti: PySentiStr, commits: List[Commit], delta: relativedelta, config: Configuration):
         self._senti = senti
@@ -51,6 +21,10 @@ class CommitAnalysis():
         pass
 
     def extract(self):
+        # sort commits
+        commits = self._commits.copy()
+        commits.sort(key=lambda o: o.committed_datetime)
+
         # split commits into batches
         batches = []
         batch = []
@@ -63,15 +37,15 @@ class CommitAnalysis():
         batchStartDate = None
         batchEndDate = None
         batchDates = []
+        logging.info("Delta {}".format(self._delta))
 
-        for commit in self._commits:
+        for commit in commits:
             if startDate is not None and startDate > commit.committed_datetime:
                 continue
 
             if batchStartDate is None:
                 batchStartDate = commit.committed_datetime
                 batchEndDate = batchStartDate + self._delta
-
                 batchDates.append(batchStartDate)
             elif commit.committed_datetime > batchEndDate:
                 batches.append(batch)
@@ -80,10 +54,11 @@ class CommitAnalysis():
                 batchEndDate = batchStartDate + self._delta
                 batchDates.append(batchStartDate)
 
+
             batch.append(commit)
 
         batches.append(batch)
-        del batch
+        del batch, commits
 
         authorInfoDict = {}
         daysActive = list()
@@ -108,14 +83,15 @@ class CommitAnalysis():
             startDate = datetime.strptime(self._config.startDate, "%Y-%m-%d")
             startDate = startDate.replace(tzinfo=pytz.UTC)
 
-        self._commits.sort(key=lambda x: x.committed_datetime, reverse=True)
+        commits = self._commits.copy()
+        commits.sort(key=lambda x: x.committed_datetime, reverse=True)
 
         commitMessages = []
         lastDate = None
         firstDate = None
         realCommitCount = 0
 
-        for commit in self._commits:
+        for commit in commits:
             if startDate is not None and startDate > commit.committed_datetime:
                 continue
 
@@ -303,3 +279,32 @@ class CommitAnalysis():
 
         return authorInfoDict, daysActive
         
+def outputStatistics(idx: int, data, metric: str, outputDir: str):
+    # validate
+    if len(data) < 1:
+        return
+
+    # calculate and output
+    stats = calculateStats(data)
+
+    # output
+    with open(os.path.join(outputDir, f"results_{idx}.csv"), "a", newline="") as f:
+        w = csv.writer(f, delimiter=",")
+
+        for key in stats:
+            outputValue(w, metric, key, stats)
+
+def calculateStats(data):
+    stats = dict(
+        count=len(data),
+        mean=statistics.mean(data),
+        stdev=statistics.stdev(data) if len(data) > 1 else None
+    )
+
+    return stats
+
+def outputValue(w, metric: str, name: str, dict: dict):
+    value = dict[name]
+    name = "{0}_{1}".format(metric, name)
+    w.writerow([name, value])
+
