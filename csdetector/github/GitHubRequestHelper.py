@@ -9,14 +9,11 @@ class GitHubRequestHelper:
     @staticmethod
     def get_author_id(author: git.Actor):
         id = ""
-
         if author.email is None:
             id = author.name.lower().strip()
         else:
             id = author.email.lower().strip()
-
         return id
-
 
     @classmethod
     def init_tokens(cls, config: Configuration):

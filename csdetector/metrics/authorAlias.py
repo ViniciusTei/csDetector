@@ -4,19 +4,21 @@ from git.repo import Repo
 from strsimpy.metric_lcs import MetricLCS
 
 from csdetector import Configuration
+from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubResquestCommits import GitHubRequestCommits
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper 
 
 # TODO: add output to file
 # TODO: filter out emails that belong to bot accounts
 class AuthorAlias:
-    _request: GitHubRequestHelper
+    _request: GitHubRequestController
     _aliases: dict
 
-    def __init__(self, config: Configuration, repo: Repo, request: GitHubRequestHelper) -> None:
+    def __init__(self, config: Configuration, repo: Repo, request: GitHubRequestController) -> None:
         self._config = config
         self._repo = repo
         self._request = request
+        self._request.init(strategy=GitHubRequestCommits())
 
     # apply Levenshtein distance to the local part of the email
     def _areSimilar(self, valueA: str, valueB: str, maxDistance: float):
@@ -142,8 +144,9 @@ class AuthorAlias:
 
         for commit in commitshaByEmail:
             sha = commitshaByEmail[commit]
-            commitUrl = GitHubRequestCommits.requestUrl(self._config, sha)
-            response = self._request.request(commitUrl)
+            #TODO: refactor this crapy code, sorry... I just want to finish this
+            commitUrl = GitHubRequestCommits.urlCommitBySha(self._config, sha)
+            response = self._request.request.request(commitUrl)
 
             if response is None:
                 continue

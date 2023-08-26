@@ -5,17 +5,19 @@ import sentistrength
 from git.repo import Repo
 
 from csdetector import Configuration, utils
+from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
+from csdetector.metrics.releaseAnalysis import ReleaseAnalysis
 from csdetector.metrics.tagAnalysis import TagAnalysis
 
 class CommunitySmells:
     _config: Configuration
     _repo: Repo
     _senti: sentistrength.PySentiStr
-    _request: GitHubRequestHelper
+    _request: GitHubRequestController
 
     def __init__(self, config: Configuration):
         self._config = config
@@ -40,8 +42,7 @@ class CommunitySmells:
             config.sentiStrengthPath, "SentiStrength_Data").replace("\\", "/") + "/"
         self._senti.setSentiStrengthLanguageFolderPath(sentiDataPath)
         
-        self._request = GitHubRequestHelper()
-        self._request.init_tokens(self._config)
+        self._request = GitHubRequestController(self._config)
         
         logging.info("CSFactory initialized")
 
@@ -60,6 +61,8 @@ class CommunitySmells:
         TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
 
         coreDevs = CentralityAnalysis(self._config, commits, delta, batchDates).extract()
+
+        ReleaseAnalysis(self._config).extract(commits, delta, batchDates)
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics
