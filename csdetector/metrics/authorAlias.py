@@ -13,11 +13,10 @@ class AuthorAlias:
     _request: GitHubRequestHelper
     _aliases: dict
 
-    def __init__(self, config: Configuration, repo: Repo):
+    def __init__(self, config: Configuration, repo: Repo, request: GitHubRequestHelper) -> None:
         self._config = config
-        self._request = GitHubRequestHelper()
-        self._request.init_tokens(self._config)
         self._repo = repo
+        self._request = request
 
     # apply Levenshtein distance to the local part of the email
     def _areSimilar(self, valueA: str, valueB: str, maxDistance: float):

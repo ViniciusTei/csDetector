@@ -20,7 +20,7 @@ class GitHubRequestHelper:
 
     @classmethod
     def init_tokens(cls, config: Configuration):
-        cls._tokens = config.pat
+        cls._tokens = config.pat.copy()
 
     @classmethod
     def request(cls, url):

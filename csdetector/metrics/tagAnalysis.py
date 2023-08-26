@@ -1,11 +1,11 @@
 import csv
+import logging
 import os
 import datetime
 from typing import List
 from dateutil.relativedelta import relativedelta
 
 from csdetector.metrics.commitAnalysis import outputStatistics
-
 
 class TagAnalysis:
     def __init__(self, config, repo, delta: relativedelta, batchDates: List[datetime.datetime], daysActive: List[int]):
@@ -19,6 +19,7 @@ class TagAnalysis:
     def extract(self):
         tagInfo = []
         tags = sorted(self._repo.tags, key=self._getTaggedDate)
+        logging.info("Found {} tags".format(len(tags)))
 
         if len(tags) > 0:
             lastTag = None
@@ -62,7 +63,7 @@ class TagAnalysis:
             w.writerow(["Tag Count", len(tagInfo)])
 
         # output tag info
-        print("Outputting CSVs")
+        logging.info("Outputting CSVs")
 
         with open(
             os.path.join(self._config.resultsPath, f"results_{idx}.csv"), "a", newline=""

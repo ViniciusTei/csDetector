@@ -5,15 +5,17 @@ import sentistrength
 from git.repo import Repo
 
 from csdetector import Configuration, utils
+from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
 from csdetector.metrics.tagAnalysis import TagAnalysis
 
-class CSFactory:
+class CommunitySmells:
     _config: Configuration
     _repo: Repo
     _senti: sentistrength.PySentiStr
+    _request: GitHubRequestHelper
 
     def __init__(self, config: Configuration):
         self._config = config
@@ -37,10 +39,15 @@ class CSFactory:
         sentiDataPath = os.path.join(
             config.sentiStrengthPath, "SentiStrength_Data").replace("\\", "/") + "/"
         self._senti.setSentiStrengthLanguageFolderPath(sentiDataPath)
+        
+        self._request = GitHubRequestHelper()
+        self._request.init_tokens(self._config)
+        
+        logging.info("CSFactory initialized")
 
     def detect(self):
         # A - mine developer aliases
-        authorAliasExtractor = AuthorAlias(self._config, self._repo)
+        authorAliasExtractor = AuthorAlias(self._config, self._repo, self._request)
         authorAliasExtractor.extract()
 
         # B - build social network graphs
@@ -49,13 +56,10 @@ class CSFactory:
 
         commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
         batchDates, authorInfoDict, daysActive = commitAnalysis.extract()
-        logging.info("Batch dates: {}".format(batchDates))
 
         TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
 
         coreDevs = CentralityAnalysis(self._config, commits, delta, batchDates).extract()
-        print(coreDevs)
-        
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics

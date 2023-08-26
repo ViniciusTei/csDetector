@@ -4,8 +4,8 @@ import logging
 import datetime
 import os
 
+from csdetector.cummunitysmells import CommunitySmells
 from csdetector.config import initialize_config
-from csdetector.csfactory import CSFactory
 
 # define logging 
 def generate_filename_with_datetime():
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     logging.debug("Started with DEBUG mode enabled")
     logging.info("CsDetector started, analysing repository: {0}".format(global_configuration.repositoryUrl))
 
-    smells = CSFactory(global_configuration).detect()
+    smells = CommunitySmells(global_configuration).detect()
     logging.info("CsDetector finished, found {0} smells.".format(len(smells)))
     print(smells)
     
