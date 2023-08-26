@@ -1,3 +1,5 @@
+from typing import List
+from requests import Response
 from csdetector import Configuration
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.github.GitHubRequestStrategy import GitHubRequestStrategy
@@ -16,9 +18,43 @@ class GitHubRequestController:
     def request(self):
         return self._request
 
+    def init(self, strategy: GitHubRequestStrategy):
+        self._strategy = strategy
+        pass
+
     @classmethod
-    def init(cls, strategy: GitHubRequestStrategy):
-        cls._strategy = strategy
+    def requestComments(cls, urlComments: str) -> List[str]:
+        comments = []
+        responseComments = cls._request.request(urlComments)
+        if responseComments is not None:
+            for comment in responseComments.json():
+                comments.append(comment["body"])
+
+        return comments
+
+    @classmethod
+    def requestTotalCommits(cls, urlCommits: str) -> int:
+        responseCommits = cls._request.request(urlCommits)
+        if responseCommits is not None:
+            return len(responseCommits.json())
+
+        return 0
+
+    @classmethod
+    def requestParticipants(cls, config: Configuration, number: int) -> List[str]:
+        url = "https://api.github.com/repos/{}/{}/issues/{}/events".format(
+            config.repositoryOwner, config.repositoryName, number
+        )
+        participants = []
+        responseParticipants = cls._request.request(url)
+        if responseParticipants is not None:
+            for participant in responseParticipants.json():
+                login = participant["actor"]["login"]
+
+                if login not in participants:
+                    participants.append(login)
+
+        return participants
 
     @classmethod
     def numberOfPages(cls, config: Configuration) -> int:

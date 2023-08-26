@@ -14,3 +14,7 @@ class GitHubRequestStrategy(ABC):
     def urlRequestPerPage(config: Configuration, page: int) -> str:
         pass
 
+    @staticmethod
+    @abstractmethod
+    def urlRequestComments(config: Configuration, number: int) -> str:
+        pass
