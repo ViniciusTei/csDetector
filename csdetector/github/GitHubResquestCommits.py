@@ -13,4 +13,7 @@ class GitHubRequestCommits(GitHubRequestStrategy):
     @staticmethod
     def urlCommitBySha(config: Configuration, sha: str):
         return "https://api.github.com/repos/{}/{}/commits/{}".format(config.repositoryOwner, config.repositoryName, sha)
-        
+
+    @staticmethod
+    def urlRequestComments(config: Configuration, sha: str):
+       return "" 

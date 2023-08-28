@@ -4,7 +4,7 @@ import logging
 import datetime
 import os
 
-from csdetector.cummunitysmells import CommunitySmells
+from csdetector.communitysmells import CommunitySmells
 from csdetector.config import initialize_config
 
 # define logging 

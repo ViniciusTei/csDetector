@@ -38,6 +38,31 @@ class CentralityAnalysis:
         logging.info("Finished centrality analysis, returning {} core devs".format(len(coreDevs)))
         return coreDevs
 
+    def buildGraph(self, batchIdx: int, batch: list, prefix: str):
+        allRelatedAuthors = {}
+        authorItems = Counter({})
+
+        # for all commits...
+        print("Analyzing centrality")
+        for authors in batch:
+
+            for author in authors:
+
+                # increase author commit count
+                authorItems.update({author: 1})
+
+                # get current related authors collection and update it
+                relatedAuthors = set(
+                    relatedAuthor
+                    for otherAuthors in batch
+                    for relatedAuthor in otherAuthors
+                    if author in otherAuthors and relatedAuthor != author
+                )
+                authorRelatedAuthors = allRelatedAuthors.setdefault(author, set())
+                authorRelatedAuthors.update(relatedAuthors)
+
+        return self._prepareGraph(allRelatedAuthors, authorItems, batchIdx, prefix)
+
     def _processBatch(self, batchIdx: int, commits: List[Commit]):
         allRelatedAuthors = {}
         authorCommits = Counter({})

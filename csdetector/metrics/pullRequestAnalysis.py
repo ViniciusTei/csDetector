@@ -13,7 +13,9 @@ from csdetector import Configuration
 from csdetector.entities.PullRequest import PullRequest
 from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubRequestPullRequest import GitHubRequestPullRequest
+from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import outputStatistics
+from csdetector.metrics.sentimentAnalysis import SentimentAnalysis
 
 class PRAnalysis:
     _request: GitHubRequestController
@@ -77,7 +79,7 @@ class PRAnalysis:
         return batches
 
     @classmethod
-    def extract(cls, senti: sentistrength.PySentiStr, delta: relativedelta,batchDates: List[datetime]):
+    def extract(cls, senti: sentistrength.PySentiStr, delta: relativedelta,batchDates: List[datetime], cA: CentralityAnalysis):
 
         logging.info("Querying PRs")
         batches = cls._prRequest(
@@ -147,7 +149,7 @@ class PRAnalysis:
                 allComments.extend(comments)
 
                 thread = threading.Thread(
-                    target=analyzeSentiments,
+                    target=SentimentAnalysis.analyze,
                     args=(
                         senti,
                         comments,
@@ -193,13 +195,13 @@ class PRAnalysis:
                     1 for _ in filter(lambda value: value <= -1, commentSentiments)
                 )
 
-            toxicityPercentage = getToxicityPercentage(config, allComments)
+            toxicityPercentage = SentimentAnalysis.getToxicityPercentage(cls._config, allComments)
 
-            buildGraphQlNetwork(batchIdx, participants, "PRs", config)
+            cA.buildGraph(batchIdx, participants, "PRs")
 
             logging.info("  Analyzing PR batch  Writing results")
             with open(
-                os.path.join(config.resultsPath, f"results_{batchIdx}.csv"),
+                os.path.join(cls._config.resultsPath, f"results_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -212,7 +214,7 @@ class PRAnalysis:
                 w.writerow(["PRCommentsToxicityPercentage", toxicityPercentage])
 
             with open(
-                os.path.join(config.metricsPath, f"PRCommits_{batchIdx}.csv"),
+                os.path.join(cls._config.metricsPath, f"PRCommits_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -222,7 +224,7 @@ class PRAnalysis:
                     w.writerow([pr["number"], pr["commitCount"]])
 
             with open(
-                os.path.join(config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
+                os.path.join(cls._config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -236,57 +238,56 @@ class PRAnalysis:
                 batchIdx,
                 commentLengths,
                 "PRCommentsLength",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 durations,
                 "PRDuration",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [len(pr["comments"]) for pr in batch],
                 "PRCommentsCount",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [pr["commitCount"] for pr in batch],
                 "PRCommitsCount",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 commentSentiments,
                 "PRCommentSentiments",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [len(set(pr["participants"])) for pr in batch],
                 "PRParticipantsCount",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 prPositiveComments,
                 "PRCountPositiveComments",
-                config.resultsPath,
+               cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 prNegativeComments,
                 "PRCountNegativeComments",
-                config.resultsPath,
+                cls._config.resultsPath,
             )
 
         return batchParticipants, batchComments
-        pass

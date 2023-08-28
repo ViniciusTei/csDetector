@@ -9,3 +9,8 @@ class GitHubRequestReleases(GitHubRequestStrategy):
     @staticmethod
     def urlRequestPerPage(config: Configuration, page: int) -> str:
         return "https://api.github.com/repos/{}/{}/releases?page={}&per_page=100".format(config.repositoryOwner, config.repositoryName, page)
+
+    @staticmethod
+    def urlRequestComments(config: Configuration, number: int):
+        pass
+

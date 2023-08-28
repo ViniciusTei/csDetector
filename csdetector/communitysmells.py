@@ -10,6 +10,7 @@ from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
+from csdetector.metrics.pullRequestAnalysis import PRAnalysis
 from csdetector.metrics.releaseAnalysis import ReleaseAnalysis
 from csdetector.metrics.tagAnalysis import TagAnalysis
 
@@ -58,11 +59,19 @@ class CommunitySmells:
         commitAnalysis = CommitAnalysis(self._senti, commits, delta, self._config)
         batchDates, authorInfoDict, daysActive = commitAnalysis.extract()
 
-        TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
 
-        coreDevs = CentralityAnalysis(self._config, commits, delta, batchDates).extract()
+        TagAnalysis(self._config, self._repo, delta, batchDates, daysActive).extract()
+        cA = CentralityAnalysis(self._config, commits, delta, batchDates)
+
+        coreDevs = cA.extract()
 
         ReleaseAnalysis(self._config).extract(commits, delta, batchDates)
+        
+        prA = PRAnalysis(self._config) 
+        prParticipantBatches, prCommentBatches = prA.extract(self._senti, delta, batchDates, cA)
+        logging.info("PR Analysis completed")
+        logging.info("PR Participant Batches: %s", prParticipantBatches)
+        logging.info("PR Comment Batches: %s", prCommentBatches)
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics
