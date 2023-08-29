@@ -59,7 +59,27 @@ def initialize_config(entry_args: list[str]):
         help="Start date of project life",
         required=False,
     )
+    
+    parser.add_argument(
+        "-d",
+        "--debug",
+        help="Enable debug logging",
+        required=False,
+        nargs="?",
+        const=True,
+        default=False,
+        type=bool,
+    )
 
+    parser.add_argument(
+        "-a",
+        "--alias",
+        help="Extract authors alias for the repository",
+        required=False,
+        default=False,
+        type=bool,
+    )
+    
     args = parser.parse_args(entry_args)
 
     #validation of the input inserted by the user
@@ -106,7 +126,8 @@ def initialize_config(entry_args: list[str]):
         0,
         args.pat,
         args.googleKey,
-        args.startDate
+        args.startDate,
+        args.alias
     )
 
-    return config
+    return config, args.debug
