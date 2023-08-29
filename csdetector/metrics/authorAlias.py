@@ -21,6 +21,7 @@ class AuthorAlias:
         self._repo = repo
         self._request = request
         self._request.setStrategy(strategy=GitHubRequestCommits)
+        self._aliases = dict()
 
     # apply Levenshtein distance to the local part of the email
     def _areSimilar(self, valueA: str, valueB: str, maxDistance: float):
@@ -123,18 +124,20 @@ class AuthorAlias:
         
         if self._aliases is None:
             return commits
-        
-        logging.info("Replacing aliases")
-        aliases = self._aliases
-        # transpose for easy replacements
-        transposesAliases = {}
-        for alias in aliases:
-            for email in aliases[alias]:
-                transposesAliases[email] = alias
+        try:
+            aliases = self._aliases
+            # transpose for easy replacements
+            transposesAliases = {}
+            logging.info("Replacing aliases")
+            for alias in aliases:
+                for email in aliases[alias]:
+                    transposesAliases[email] = alias
 
-        # replace all author aliases with a unique one
-        return self._replaceAll(commits, transposesAliases)
+            # replace all author aliases with a unique one
+            return self._replaceAll(commits, transposesAliases)
 
+        except NameError as e:
+            return commits
 
     def _replaceAll(self, commits, aliases):
         for commit in commits:
