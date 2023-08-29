@@ -1,4 +1,6 @@
 import logging
+import yaml
+import os
 import re
 from git.repo import Repo
 from strsimpy.metric_lcs import MetricLCS
@@ -104,19 +106,25 @@ class AuthorAlias:
                         break
 
         self._aliases = aliases
-        # returm dictionary of aliases
-        # key: alias
-        # value: list of emails
+
+        aliasPath = os.path.join(self._config.repositoryPath, "aliases.yml")
+        logging.info("Writing aliases to '{0}'".format(aliasPath))
+        if not os.path.exists(os.path.dirname(aliasPath)):
+            os.makedirs(os.path.dirname(aliasPath))
+
+        with open(aliasPath, "a", newline="") as f:
+            yaml.dump(aliases, f)
+
         logging.info("Extracted {} aliases".format(len(aliases)))
         return aliases
 
     def replaceAliases(self):
-        logging.info("Replacing aliases")
-        if self._aliases is None:
-            raise Exception("Aliases are not extracted yet, run extract() first")
-
         commits = list(self._repo.iter_commits())
         
+        if self._aliases is None:
+            return commits
+        
+        logging.info("Replacing aliases")
         aliases = self._aliases
         # transpose for easy replacements
         transposesAliases = {}
