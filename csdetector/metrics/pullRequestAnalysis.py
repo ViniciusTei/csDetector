@@ -14,8 +14,8 @@ from csdetector.entities.PullRequest import PullRequest
 from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubRequestPullRequest import GitHubRequestPullRequest
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
-from csdetector.metrics.commitAnalysis import outputStatistics
 from csdetector.metrics.sentimentAnalysis import SentimentAnalysis
+from csdetector.utils.statistics import outputStatistics
 
 class PRAnalysis:
     _request: GitHubRequestController

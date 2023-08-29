@@ -5,7 +5,7 @@ import datetime
 from typing import List
 from dateutil.relativedelta import relativedelta
 
-from csdetector.metrics.commitAnalysis import outputStatistics
+from csdetector.utils.statistics import outputStatistics
 
 class TagAnalysis:
     def __init__(self, config, repo, delta: relativedelta, batchDates: List[datetime.datetime], daysActive: List[int]):

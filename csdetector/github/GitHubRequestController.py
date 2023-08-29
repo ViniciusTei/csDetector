@@ -63,10 +63,13 @@ class GitHubRequestController:
 
         if response is None:
             return 1
-        
-        if response.links.keys():
-            return int(response.links['last']['url'].partition("&page=")[-1])
-        else:
+
+        try:
+            if response.links.keys():
+                return int(response.links['last']['url'].partition("&page=")[-1])
+            else:
+                return 1
+        except ValueError:
             return 1
 
     @classmethod

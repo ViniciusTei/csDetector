@@ -14,7 +14,7 @@ from csdetector.entities.Issue import Issue
 from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubRequestIssues import GitHubRequestIssues
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
-from csdetector.metrics.commitAnalysis import outputStatistics
+from csdetector.utils.statistics import outputStatistics
 from csdetector.metrics.sentimentAnalysis import SentimentAnalysis
 
 class IssueAnalysis:

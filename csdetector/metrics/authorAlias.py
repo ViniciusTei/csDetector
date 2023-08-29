@@ -124,6 +124,7 @@ class AuthorAlias:
         
         if self._aliases is None:
             return commits
+
         try:
             aliases = self._aliases
             # transpose for easy replacements

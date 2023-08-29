@@ -11,7 +11,7 @@ from csdetector import Configuration
 from csdetector.entities.Release import Release
 from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.github.GitHubRequestReleases import GitHubRequestReleases
-from csdetector.metrics.commitAnalysis import outputStatistics
+from csdetector.utils.statistics import outputStatistics
 
 class ReleaseAnalysis:
     def __init__(self, config: Configuration, request: GitHubRequestController) -> None:

@@ -5,12 +5,12 @@ from dateutil.relativedelta import relativedelta
 from git import Commit
 from pandas.core.dtypes.dtypes import pytz
 from sentistrength import PySentiStr
-import statistics 
 import csv
 import os
 
 from csdetector import Configuration
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
+from csdetector.utils.statistics import outputStatistics
 
 class CommitAnalysis():
     def __init__(self, senti: PySentiStr, commits: List[Commit], delta: relativedelta, config: Configuration):
@@ -279,32 +279,3 @@ class CommitAnalysis():
 
         return authorInfoDict, daysActive
         
-def outputStatistics(idx: int, data, metric: str, outputDir: str):
-    # validate
-    if len(data) < 1:
-        return
-
-    # calculate and output
-    stats = calculateStats(data)
-
-    # output
-    with open(os.path.join(outputDir, f"results_{idx}.csv"), "a", newline="") as f:
-        w = csv.writer(f, delimiter=",")
-
-        for key in stats:
-            outputValue(w, metric, key, stats)
-
-def calculateStats(data):
-    stats = dict(
-        count=len(data),
-        mean=statistics.mean(data),
-        stdev=statistics.stdev(data) if len(data) > 1 else None
-    )
-
-    return stats
-
-def outputValue(w, metric: str, name: str, dict: dict):
-    value = dict[name]
-    name = "{0}_{1}".format(metric, name)
-    w.writerow([name, value])
-

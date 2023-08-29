@@ -10,7 +10,7 @@ from git import Commit
 import matplotlib.pyplot as plt
 from csdetector import Configuration
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
-from csdetector.metrics.commitAnalysis import outputStatistics
+from csdetector.utils.statistics import outputStatistics
 from networkx.algorithms.community import greedy_modularity_communities
 
 class CentralityAnalysis:
