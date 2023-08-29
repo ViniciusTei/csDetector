@@ -105,8 +105,6 @@ class PRAnalysis:
             prNegativeComments = list()
             generallyNegative = list()
 
-            logging.info(f"Sentiments per PR")
-
             semaphore = threading.Semaphore(15)
             threads = []
             for pr in batch:
@@ -180,9 +178,6 @@ class PRAnalysis:
 
             # get pr duration stats
             durations = [(pr.closedAt - pr.createdAt).days for pr in batch]
-
-            logging.info("Analyzing PR batch  All sentiments")
-
             commentSentiments = []
             commentSentimentsPositive = 0
             commentSentimentsNegative = 0

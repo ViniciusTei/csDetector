@@ -20,7 +20,6 @@ class SentimentAnalysis:
         generallyNegative, 
         semaphore
     ):
-
         with semaphore:
             commentSentiments = (
                 senti.getSentiment(comments, score="scale")
@@ -42,8 +41,6 @@ class SentimentAnalysis:
 
                 if commentSentimentsNegative / len(comments) > 0.5:
                     generallyNegative.append(True)
-
-                logging.info(f".", end="")
 
     @staticmethod
     def getToxicityPercentage(config: Configuration, comments: List):
