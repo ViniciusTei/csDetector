@@ -9,8 +9,8 @@ Here we will analyze the tool in a way that allows us to understand its modules 
 Through this refactoring, we have three main objectives to achieve success:
 
 - [x] Accept multiple GitHub tokens.
+- [x] Improve maintainability.
 - [ ] Handle potential bot-generated comments.
-- [ ] Improve maintainability.
 
 The primary initial objectives of refactoring the [CSDETECTOR](https://github.com/Nuri22/csDetector) tool are as follows:
 
@@ -29,7 +29,7 @@ The primary initial objectives of refactoring the [CSDETECTOR](https://github.co
   4. **Sentiment-Related Metrics Calculation:** Analyzes content to calculate sentiment metrics.
   5. **Socio-Technical Metrics Calculation:** Uses the social graph to quantify collaboration among developers.
 
-- **Code Smells Detection Module:**
+- **Community Smells Detection Module:**
   1. **Community Smells Detection:** Utilizes extracted features and calculated metrics as input.
   2. **Pre-Trained Models:** Employs pre-trained models to identify potential "code smells" in the community.
   
@@ -107,8 +107,8 @@ python main.py -p <GitHub_PAT> -g <Google_API_Key> -r <repository_url> -m 6 -s <
 - **GitHub PAT (Personal Access Token)**: Obtain from your GitHub account settings. Multiple tokens can be used for improved data extraction efficiency.
 - **Google Cloud API Key**: Required only if using Perspective API.
 - **Repository URL**: URL of the GitHub repository you want to analyze.
-- **SentiStrength Path**: Path to the SentiStrength tool (for sentiment analysis).
-- **Output Path**: Local directory path for analysis output.
+- **SentiStrength Path**: Path to the SentiStrength tool (default is `senti`).
+- **Output Path**: Local directory path for analysis output (default is `out`).
 
 For more details and advanced usage, consult the README in the [CSDETECTOR repository](https://github.com/Nuri22/csDetector).
 
