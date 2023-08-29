@@ -1,38 +1,114 @@
-# CSDETECTOR
+# CSDETECTOR Refactoring
 
-Neste documento, abordaremos a refatoração da ferramenta [CSDETECTOR](https://github.com/Nuri22/csDetector), com o 
-objetivo de aprimorar a extração de dados do GitHub. A ferramenta atual apresenta algumas limitações que afetam sua eficiência e funcionalidade.
+In this document, we will address the refactoring of the [CSDETECTOR](https://github.com/Nuri22/csDetector) tool, with the aim of enhancing GitHub data extraction. The current tool has some limitations that affect its efficiency and functionality.
 
-Aqui vamos analizar a ferramenta de forma a entender os seus módulos de forma idependente
-e facilitar a refatoração da ferramenta para atitingir o objetivo de melhorar a extração de dados do GitHub.
+Here we will analyze the tool in a way that allows us to understand its modules independently and facilitate the refactoring process to achieve the goal of improving GitHub data extraction.
 
-## Objetivos
+## Objectives
 
-Com a refatoração buscamos 3 objetivos principais para entender como sucesso
+Through this refactoring, we have three main objectives to achieve success:
 
-- [ ] Aceitar múltiplos tokens do GitHub
-- [ ] Tratar os possíveis bots que fazem comentários
-- [ ] Melhorar a manutenabilidade
+- [x] Accept multiple GitHub tokens.
+- [ ] Handle potential bot-generated comments.
+- [ ] Improve maintainability.
 
-Os principais objetivos iniciais da refatoração da ferramenta [CSDETECTOR](https://github.com/Nuri22/csDetector) são os seguintes:
+The primary initial objectives of refactoring the [CSDETECTOR](https://github.com/Nuri22/csDetector) tool are as follows:
 
-- **Aceitar Múltiplos Tokens do GitHub**: A ferramenta atualmente opera com um único token de autenticação do GitHub. No entanto, para aprimorar a extração de dados e evitar limitações de taxa, é desejável que a ferramenta seja capaz de aceitar e gerenciar múltiplos tokens de autenticação. Isso permitirá uma distribuição mais eficiente das requisições à API do GitHub.
-- **Tratar Possíveis Bots que Fazem Comentários**: Durante a análise de repositórios no GitHub, é comum encontrar comentários feitos por bots. Esses comentários podem conter informações irrelevantes ou duplicadas, prejudicando a qualidade dos dados extraídos. O objetivo é implementar mecanismos que identifiquem e filtrem esses comentários, melhorando a precisão e a relevância dos resultados obtidos.
-- **Melhorar a Manutenibilidade**: A estrutura e o código da ferramenta devem ser reorganizados e otimizados para melhorar sua manutenibilidade. Isso inclui a divisão clara dos módulos, a adoção de boas práticas de programação, a remoção de código redundante e a documentação adequada do código-fonte. Uma ferramenta bem organizada será mais fácil de entender, modificar e estender no futuro.
+- **Accept Multiple GitHub Tokens**: The current tool operates with a single GitHub authentication token. However, to enhance data extraction and avoid rate limitations, it is desirable for the tool to be capable of accepting and managing multiple authentication tokens. This will enable a more efficient distribution of requests to the GitHub API.
+- **Handle Potential Bot-Generated Comments**: While analyzing repositories on GitHub, it is common to encounter comments made by bots. These comments may contain irrelevant or duplicate information, impacting the quality of the extracted data. The goal is to implement mechanisms that identify and filter out these comments, improving the accuracy and relevance of the obtained results.
+- **Improve Maintainability**: The tool's structure and code need to be reorganized and optimized to improve maintainability. This includes clear module division, adherence to programming best practices, removal of redundant code, and proper documentation of the source code. A well-organized tool will be easier to understand, modify, and extend in the future.
 
-### Sobre a CSDETECTOR
+### About CSDETECTOR
 
-**Módulos Principais e Funcionalidades**
+**Key Modules and Functionalities**
 
-- **Módulo de Extração de Métricas:**
-  1. **Extração de Artefatos de Desenvolvedores:** Inicia coletando artefatos do sistema de controle de versão.
-  2. **Extração de Aliases de Desenvolvedores:** Obtém os aliases (identificadores) dos desenvolvedores.
-  3. **Construção de Grafo Social:** Utiliza os aliases para criar um grafo social interconectando os desenvolvedores.
-  4. **Cálculo de Métricas Relacionadas a Sentimentos:** Analisa o conteúdo para calcular métricas de sentimento.
-  5. **Cálculo de Métricas Sócio-Técnicas:** Utiliza o grafo social para quantificar a colaboração entre os desenvolvedores.
+- **Metrics Extraction Module:**
+  1. **Developer Artifact Extraction:** Begins by collecting artifacts from the version control system.
+  2. **Developer Alias Extraction:** Retrieves aliases (identifiers) of developers.
+  3. **Social Graph Construction:** Utilizes aliases to create a social graph interconnecting developers.
+  4. **Sentiment-Related Metrics Calculation:** Analyzes content to calculate sentiment metrics.
+  5. **Socio-Technical Metrics Calculation:** Uses the social graph to quantify collaboration among developers.
 
-- **Módulo de Detecção de Code Smells:**
-  1. **Detecção de Odores na Comunidade:** Utiliza as características extraídas e métricas calculadas como entrada.
-  2. **Modelos Pré-Treinados:** Emprega modelos pré-treinados para identificar possíveis "code smells" na comunidade.
+- **Code Smells Detection Module:**
+  1. **Community Smells Detection:** Utilizes extracted features and calculated metrics as input.
+  2. **Pre-Trained Models:** Employs pre-trained models to identify potential "code smells" in the community.
   
-Esse sistema opera em duas etapas principais: primeiro, ele extrai informações relacionadas aos desenvolvedores e suas interações da comunidade de desenvolvimento; em seguida, ele utiliza essas informações para detectar possíveis problemas ou "Communit Smells".
+This system operates in two main stages: first, it extracts information related to developers and their interactions from the development community; then, it utilizes this information to detect possible issues or "Community Smells".
+
+# Usage Instructions
+
+Follow these instructions to set up and use the tool effectively.
+
+## Prerequisites
+
+- Python 3.x is installed on your system.
+- Git is installed (for repository cloning).
+- Google Cloud API Key (if using Perspective API).
+- SentiStrength tool is downloaded (See [setup](setup.sh)).
+
+## Setup
+
+1. Clone the CSDETECTOR repository from GitHub:
+   
+   ```bash
+   git clone https://github.com/ViniciusTei/csDetector.git
+   cd csDetector
+   ```
+
+2. Create and activate a virtual environment (recommended):
+   
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install the required Python packages:
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the setup script to install additional components:
+   
+   ```bash
+   sh setup.sh
+   ```
+
+## Usage
+
+Navigate to the root directory of the CSDETECTOR tool in your terminal before executing the following commands.
+
+```bash
+cd /path/to/csDetector
+```
+
+Run the main script `main.py` with the required arguments:
+
+```bash
+python main.py -p <GitHub_PAT> -r <repository_url> -s <sentiStrength_path> -o <output_path>
+```
+
+### Optional Arguments:
+
+- `-g, --googleKey`: Google Cloud API Key for Perspective API authentication.
+- `-m, --batchMonths`: Number of months to analyze per batch (default is 9999, i.e., all data).
+- `-sd, --startDate`: Start date of the project's life (optional).
+- `-d, --debug`: Enable debug logging (optional, only for development).
+- `-a, --alias`: Extract authors' aliases for the repository (optional, if it is enabled the tool should take longer to run).
+
+**Example:**
+
+```bash
+python main.py -p <GitHub_PAT> -g <Google_API_Key> -r <repository_url> -m 6 -s <sentiStrength_path> -o <output_path> -sd 2020-01-01 -d true -a true
+```
+
+## Note
+
+- **GitHub PAT (Personal Access Token)**: Obtain from your GitHub account settings. Multiple tokens can be used for improved data extraction efficiency.
+- **Google Cloud API Key**: Required only if using Perspective API.
+- **Repository URL**: URL of the GitHub repository you want to analyze.
+- **SentiStrength Path**: Path to the SentiStrength tool (for sentiment analysis).
+- **Output Path**: Local directory path for analysis output.
+
+For more details and advanced usage, consult the README in the [CSDETECTOR repository](https://github.com/Nuri22/csDetector).
+
