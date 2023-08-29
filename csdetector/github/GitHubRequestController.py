@@ -1,5 +1,4 @@
 from typing import List
-from requests import Response
 from csdetector import Configuration
 from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.github.GitHubRequestStrategy import GitHubRequestStrategy
