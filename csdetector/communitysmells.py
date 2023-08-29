@@ -9,6 +9,7 @@ from csdetector.github.GitHubRequestController import GitHubRequestController
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
+from csdetector.metrics.issueAnalysis import IssueAnalysis
 from csdetector.metrics.pullRequestAnalysis import PRAnalysis
 from csdetector.metrics.releaseAnalysis import ReleaseAnalysis
 from csdetector.metrics.tagAnalysis import TagAnalysis
@@ -49,7 +50,9 @@ class CommunitySmells:
     def detect(self):
         # A - mine developer aliases
         authorAliasExtractor = AuthorAlias(self._config, self._repo, self._request)
-        authorAliasExtractor.extract()
+
+        if (self._config.aliasExtract):
+            authorAliasExtractor.extract()
 
         # B - build social network graphs
         delta = relativedelta(months=+self._config.batchMonths)
@@ -69,8 +72,12 @@ class CommunitySmells:
         prA = PRAnalysis(self._config, self._request) 
         prParticipantBatches, prCommentBatches = prA.extract(self._senti, delta, batchDates, cA)
         logging.info("PR Analysis completed")
-        logging.info("PR Participant Batches: %s", prParticipantBatches)
-        logging.info("PR Comment Batches: %s", prCommentBatches)
+
+        issueA = IssueAnalysis(self._config, self._request)
+        issueParticipantBatches, issueCommentBatches = issueA.extract(self._senti, delta, batchDates, cA)
+        logging.info("Issue Analysis completed")
+        logging.info("Total issue participant batches: " + str(len(issueParticipantBatches)))
+        logging.info("Total issue comment batches: " + str(len(issueCommentBatches)))
 
         # C - Compute Sentiment metrics
         # D - Compute Social metrics

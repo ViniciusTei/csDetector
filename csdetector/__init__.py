@@ -13,7 +13,8 @@ class Configuration:
         maxDistance: int,
         pat: str,
         googleKey: str,
-        startDate: str
+        startDate: str,
+        aliasExtract: bool = False,
     ):
         self.repositoryUrl = repositoryUrl
         self.batchMonths = batchMonths
@@ -22,6 +23,7 @@ class Configuration:
         self.maxDistance = maxDistance
         self.googleKey = googleKey
         self.startDate = startDate
+        self.aliasExtract = aliasExtract
 
         # parse more than 1 token if it exists
         if "," in pat:
