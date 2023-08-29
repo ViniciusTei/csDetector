@@ -4,7 +4,7 @@ from csdetector.github.GitHubRequestStrategy import GitHubRequestStrategy
 class GitHubRequestIssues(GitHubRequestStrategy):
     @staticmethod
     def urlNumberOfPages(config: Configuration) -> str:
-        return "https://api.github.com/repos/{}/{}/issues?state=all&per_page=100&page{0}".format(
+        return "https://api.github.com/repos/{}/{}/issues?state=all&per_page=100&page=1".format(
             config.repositoryOwner, config.repositoryName
         )
 
