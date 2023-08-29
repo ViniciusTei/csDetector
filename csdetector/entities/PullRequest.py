@@ -10,3 +10,27 @@ class PullRequest:
         self._commitCount = commitCount
         self._participants = participants
         pass
+
+    @property
+    def number(self) -> int:
+        return self._number
+
+    @property
+    def createdAt(self) -> datetime:
+        return self._createdAt
+
+    @property
+    def closedAt(self) -> datetime:
+        return self._closedAt
+
+    @property
+    def comments(self) -> List[str]:
+        return self._comments
+
+    @property
+    def commitCount(self) -> int:
+        return self._commitCount
+
+    @property
+    def participants(self) -> List[str]:
+        return self._participants

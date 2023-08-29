@@ -95,7 +95,7 @@ class PRAnalysis:
             # extract data from batch
             prCount = len(batch)
             participants = list(
-                pr["participants"] for pr in batch if len(pr["participants"]) > 0
+                pr.participants for pr in batch if len(pr.participants) > 0
             )
             batchParticipants.append(participants)
 
@@ -111,7 +111,7 @@ class PRAnalysis:
             for pr in batch:
 
                 comments = list(
-                    comment for comment in pr["comments"] if comment and comment.strip()
+                    comment for comment in pr.comments if comment and comment.strip()
                 )
 
                 # split comments that are longer than 20KB
@@ -178,7 +178,7 @@ class PRAnalysis:
             generallyNegativeRatio = len(generallyNegative) / prCount
 
             # get pr duration stats
-            durations = [(pr["closedAt"] - pr["createdAt"]).days for pr in batch]
+            durations = [(pr.closedAt - pr.createdAt).days for pr in batch]
 
             logging.info("Analyzing PR batch  All sentiments")
 
@@ -201,7 +201,7 @@ class PRAnalysis:
 
             logging.info("  Analyzing PR batch  Writing results")
             with open(
-                os.path.join(cls._config.resultsPath, f"results_{batchIdx}.csv"),
+                os.path.join(self._config.resultsPath, f"results_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -221,8 +221,7 @@ class PRAnalysis:
                 w = csv.writer(f, delimiter=",")
                 w.writerow(["PR Number", "Commit Count"])
                 for pr in batch:
-                    w.writerow([pr["number"], pr["commitCount"]])
-
+                    w.writerow([pr.number, pr.commitCount])
             with open(
                 os.path.join(cls._config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
                 "a",
@@ -231,7 +230,7 @@ class PRAnalysis:
                 w = csv.writer(f, delimiter=",")
                 w.writerow(["PR Number", "Developer Count"])
                 for pr in batch:
-                    w.writerow([pr["number"], len(set(pr["participants"]))])
+                    w.writerow([pr.number, len(set(pr.participants))])
 
             # output statistics
             outputStatistics(
@@ -250,14 +249,14 @@ class PRAnalysis:
 
             outputStatistics(
                 batchIdx,
-                [len(pr["comments"]) for pr in batch],
+                [len(pr.comments) for pr in batch],
                 "PRCommentsCount",
                 cls._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
-                [pr["commitCount"] for pr in batch],
+                [pr.commitCount for pr in batch],
                 "PRCommitsCount",
                 cls._config.resultsPath,
             )
@@ -271,7 +270,7 @@ class PRAnalysis:
 
             outputStatistics(
                 batchIdx,
-                [len(set(pr["participants"])) for pr in batch],
+                [len(set(pr.participants)) for pr in batch],
                 "PRParticipantsCount",
                 cls._config.resultsPath,
             )
