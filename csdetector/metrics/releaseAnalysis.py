@@ -14,10 +14,10 @@ from csdetector.github.GitHubRequestReleases import GitHubRequestReleases
 from csdetector.metrics.commitAnalysis import outputStatistics
 
 class ReleaseAnalysis:
-    def __init__(self, config: Configuration) -> None:
+    def __init__(self, config: Configuration, request: GitHubRequestController) -> None:
         self._config = config
-        self._request = GitHubRequestController(self._config)
-        self._request.init(strategy=GitHubRequestReleases())
+        self._request = request
+        self._request.setStrategy(strategy=GitHubRequestReleases)
         pass
 
     def _releaseRequest(self, delta: relativedelta, batchDates: List[datetime]):

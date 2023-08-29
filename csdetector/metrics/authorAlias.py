@@ -18,7 +18,7 @@ class AuthorAlias:
         self._config = config
         self._repo = repo
         self._request = request
-        self._request.init(strategy=GitHubRequestCommits())
+        self._request.setStrategy(strategy=GitHubRequestCommits)
 
     # apply Levenshtein distance to the local part of the email
     def _areSimilar(self, valueA: str, valueB: str, maxDistance: float):

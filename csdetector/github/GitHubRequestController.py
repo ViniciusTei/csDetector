@@ -18,8 +18,9 @@ class GitHubRequestController:
     def request(self):
         return self._request
 
-    def init(self, strategy: GitHubRequestStrategy):
-        self._strategy = strategy
+    @classmethod
+    def setStrategy(cls, strategy):
+        cls._strategy = strategy
         pass
 
     @classmethod

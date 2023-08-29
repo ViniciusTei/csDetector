@@ -6,7 +6,6 @@ from git.repo import Repo
 
 from csdetector import Configuration, utils
 from csdetector.github.GitHubRequestController import GitHubRequestController
-from csdetector.github.GitHubRequestHelper import GitHubRequestHelper
 from csdetector.metrics.authorAlias import AuthorAlias
 from csdetector.metrics.centralityAnalysis import CentralityAnalysis
 from csdetector.metrics.commitAnalysis import CommitAnalysis
@@ -65,9 +64,9 @@ class CommunitySmells:
 
         coreDevs = cA.extract()
 
-        ReleaseAnalysis(self._config).extract(commits, delta, batchDates)
+        ReleaseAnalysis(self._config, self._request).extract(commits, delta, batchDates)
         
-        prA = PRAnalysis(self._config) 
+        prA = PRAnalysis(self._config, self._request) 
         prParticipantBatches, prCommentBatches = prA.extract(self._senti, delta, batchDates, cA)
         logging.info("PR Analysis completed")
         logging.info("PR Participant Batches: %s", prParticipantBatches)

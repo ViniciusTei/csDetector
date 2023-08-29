@@ -21,15 +21,14 @@ class PRAnalysis:
     _request: GitHubRequestController
     _config: Configuration
 
-    def __init__(self, config: Configuration) -> None:
+    def __init__(self, config: Configuration, request: GitHubRequestController) -> None:
         self._config = config
-        self._request = GitHubRequestController(self._config)
-        self._request.init(strategy=GitHubRequestPullRequest())
+        self._request = request
+        self._request.setStrategy(strategy=GitHubRequestPullRequest)
         pass
 
-    @classmethod
-    def _prRequest(cls, delta: relativedelta, batchDates: List[datetime]):
-        pages = cls._request.numberOfPages(cls._config) 
+    def _prRequest(self, delta: relativedelta, batchDates: List[datetime]) -> List[List[PullRequest]]:
+        pages = self._request.numberOfPages(self._config) 
         
         # prepare batches
         batches = []
@@ -38,7 +37,7 @@ class PRAnalysis:
         batchEndDate = None
         for page in range(1, pages + 1):
             logging.info("Querying page {}".format(page))
-            response = cls._request.requestPerPage(cls._config, page) 
+            response = self._request.requestPerPage(self._config, page) 
 
             if response is not None:
                 responseData = response.json()
@@ -62,29 +61,31 @@ class PRAnalysis:
 
                         batch = []
 
-                    comments = cls._request.requestComments(data["comments_url"])
-                    participants = cls._request.requestParticipants(cls._config, data["number"])
+                    comments = self._request.requestComments(data["comments_url"])
+                    participants = self._request.requestParticipants(self._config, data["number"])
+                    commitCount = self._request.requestTotalCommits(data["commits_url"])
 
                     pr = PullRequest(
                         number=data["number"],
                         createdAt=createdAt,
                         closedAt=closedAt,
                         comments=comments,
-                        commitCount=data["commits"],
+                        commitCount=commitCount,
                         participants=participants
                     )
 
                     batch.append(pr)
 
+        if batch != None:
+            batches.append(batch)
+
+        logging.info("Retrieved {} PRs".format(len(batches)))
         return batches
 
-    @classmethod
-    def extract(cls, senti: sentistrength.PySentiStr, delta: relativedelta,batchDates: List[datetime], cA: CentralityAnalysis):
+    def extract(self, senti: sentistrength.PySentiStr, delta: relativedelta,batchDates: List[datetime], cA: CentralityAnalysis):
 
         logging.info("Querying PRs")
-        batches = cls._prRequest(
-            delta, batchDates
-        )
+        batches = self._prRequest(delta, batchDates)
 
         batchParticipants = list()
         batchComments = list()
@@ -195,7 +196,7 @@ class PRAnalysis:
                     1 for _ in filter(lambda value: value <= -1, commentSentiments)
                 )
 
-            toxicityPercentage = SentimentAnalysis.getToxicityPercentage(cls._config, allComments)
+            toxicityPercentage = SentimentAnalysis.getToxicityPercentage(self._config, allComments)
 
             cA.buildGraph(batchIdx, participants, "PRs")
 
@@ -214,7 +215,7 @@ class PRAnalysis:
                 w.writerow(["PRCommentsToxicityPercentage", toxicityPercentage])
 
             with open(
-                os.path.join(cls._config.metricsPath, f"PRCommits_{batchIdx}.csv"),
+                os.path.join(self._config.metricsPath, f"PRCommits_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -223,7 +224,7 @@ class PRAnalysis:
                 for pr in batch:
                     w.writerow([pr.number, pr.commitCount])
             with open(
-                os.path.join(cls._config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
+                os.path.join(self._config.metricsPath, f"PRParticipants_{batchIdx}.csv"),
                 "a",
                 newline="",
             ) as f:
@@ -237,56 +238,56 @@ class PRAnalysis:
                 batchIdx,
                 commentLengths,
                 "PRCommentsLength",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 durations,
                 "PRDuration",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [len(pr.comments) for pr in batch],
                 "PRCommentsCount",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [pr.commitCount for pr in batch],
                 "PRCommitsCount",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 commentSentiments,
                 "PRCommentSentiments",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 [len(set(pr.participants)) for pr in batch],
                 "PRParticipantsCount",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 prPositiveComments,
                 "PRCountPositiveComments",
-               cls._config.resultsPath,
+               self._config.resultsPath,
             )
 
             outputStatistics(
                 batchIdx,
                 prNegativeComments,
                 "PRCountNegativeComments",
-                cls._config.resultsPath,
+                self._config.resultsPath,
             )
 
         return batchParticipants, batchComments
