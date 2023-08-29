@@ -152,8 +152,9 @@ class CommunitySmells:
                 result[smellName] = [
                     smell, SmellDetection.get_community_smell_name(detectedSmells[index])]
         
-        SmellDetection.add_to_smells_dataset(
-            self._config, batchDate.strftime("%m/%d/%Y"), detectedSmells
-        )
+        # TODO: add to smells dataset
+        # SmellDetection.add_to_smells_dataset(
+        #     self._config, batchDate.strftime("%m/%d/%Y"), detectedSmells
+        # )
     
         return detectedSmells, result
