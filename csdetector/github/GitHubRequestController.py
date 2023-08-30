@@ -54,7 +54,7 @@ class GitHubRequestController:
                 else:
                     login = participant["actor"]["login"]
 
-                if login not in participants:
+                if login is not None and login not in participants:
                     participants.append(login)
 
         return participants
