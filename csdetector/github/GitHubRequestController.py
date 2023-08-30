@@ -49,7 +49,10 @@ class GitHubRequestController:
         responseParticipants = cls._request.request(url)
         if responseParticipants is not None:
             for participant in responseParticipants.json():
-                login = participant["actor"]["login"]
+                if participant is None or participant["actor"] is None or participant["actor"]["login"] is None:
+                    login = None
+                else:
+                    login = participant["actor"]["login"]
 
                 if login not in participants:
                     participants.append(login)
